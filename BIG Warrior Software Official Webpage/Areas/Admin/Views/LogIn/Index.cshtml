@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bejelentkezés - </title>
+</head>
+<body>
+    <div>
+        <form action="@Url.Action("Run","LogIn")" method="POST">
+            <label>Felhasználónév:</label>
+            <input type="text" name="usx" />
+            <label>Jelszó:</label>
+            <input type="password" name="passx" />
+            <input type="hidden" name="guid" value="@HttpContext.Current.Session["GUID"].ToString()" />
+            <button type="submit">Belépés</button>
+        </form>
+    </div>
+</body>
+</html>

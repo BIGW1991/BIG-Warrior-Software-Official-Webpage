@@ -1,0 +1,13 @@
+﻿* {
+    background:#f0f0f0;
+    margin:0 auto;
+}
+
+.MainHeader{
+    width:100%;
+    height:200px;
+}
+.Menu ul li{
+    float:left;
+}
+

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c9185211a64c4251a78ad55e8eccf4b3" Name="Diagram1">
+        <EntityTypeShape EntityType="b3752Model.Admin" Width="1.5" PointX="5.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="b3752Model.Blog" Width="1.5" PointX="8" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="b3752Model.BlogsTag" Width="1.5" PointX="10.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="b3752Model.Client" Width="1.5" PointX="5.75" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="b3752Model.CurriculumVitae" Width="1.5" PointX="0.75" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="b3752Model.CurriculumVitaeContact" Width="1.5" PointX="3" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="b3752Model.CurriculumVitaeHobby" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="b3752Model.CurriculumVitaeLinguisticLanguage" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="b3752Model.CurriculumVitaeOperatingSystem" Width="1.5" PointX="3" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="b3752Model.CurriculumVitaeProfessionalSkillsCircleDiagram" Width="1.5" PointX="3" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="b3752Model.CurriculumVitaeProgrammingLanguage" Width="1.5" PointX="3" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="b3752Model.CurriculumVitaeQuality" Width="1.5" PointX="3" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="b3752Model.CurriculumVitaeScholarship" Width="1.5" PointX="3" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="b3752Model.CurriculumVitaeSoftware" Width="1.5" PointX="3" PointY="24" IsExpanded="true" />
+        <EntityTypeShape EntityType="b3752Model.CurriculumVitaeWorkExperience" Width="1.5" PointX="3" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="b3752Model.Home" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="b3752Model.Licence" Width="1.5" PointX="8" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="b3752Model.Reference" Width="1.5" PointX="10.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="b3752Model.Tag" Width="1.5" PointX="8" PointY="5.5" IsExpanded="true" />
+        <AssociationConnector Association="b3752Model.FK__Blogs__Admin__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="b3752Model.FK__BlogsTags__BlogI__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="b3752Model.FK__BlogsTags__TagID__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="b3752Model.FK_Licences_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="b3752Model.FK_CurriculumVitaeContacts_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="b3752Model.FK_CurriculumVitaeHobbies_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="b3752Model.FK_CurriculumVitaeLinguisticLanguages_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="b3752Model.FK_CurriculumVitaeOperatingSystems_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="b3752Model.FK_CurriculumVitaeProfessionalSkillsCircleDiagram_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="b3752Model.FK_CurriculumVitaeProgrammingLanguages_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="b3752Model.FK_CurriculumVitaeQualities_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="b3752Model.FK_CurriculumVitaeScholarships_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="b3752Model.FK_CurriculumVitaeSoftwares_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="b3752Model.FK_CurriculumVitaeWorkExperiences_ToTable" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

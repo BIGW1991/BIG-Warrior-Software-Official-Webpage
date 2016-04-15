@@ -1,0 +1,1113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="b3752Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Admins">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="35" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Blogs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="Url" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifyingDate" Type="datetime" />
+          <Property Name="Body" Type="ntext" Nullable="false" />
+          <Property Name="Admin" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BlogsTags">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="BlogID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TagID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Clients">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="EMail" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CurriculumVitae">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Image" Type="image" Nullable="false" />
+          <Property Name="Lang" Type="nvarchar" MaxLength="16" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CurriculumVitaeContacts">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Info" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="CurriculumVitaeID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CurriculumVitaeHobbies">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="CurriculumVitaeID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CurriculumVitaeLinguisticLanguages">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Level" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="CurriculumVitaeID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CurriculumVitaeOperatingSystems">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Level" Type="int" Nullable="false" />
+          <Property Name="CurriculumVitaeID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CurriculumVitaeProfessionalSkillsCircleDiagram">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Pecent" Type="numeric" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="CurriculumVitaeID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CurriculumVitaeProgrammingLanguages">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Level" Type="int" Nullable="false" />
+          <Property Name="CurriculumVitaeID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CurriculumVitaeQualities">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="128" />
+          <Property Name="CurriculumVitaeID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CurriculumVitaeScholarships">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="School" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="From" Type="date" Nullable="false" />
+          <Property Name="To" Type="date" Nullable="false" />
+          <Property Name="Professional" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="CurriculumVitaeID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CurriculumVitaeSoftwares">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Level" Type="int" Nullable="false" />
+          <Property Name="CurriculumVitaeID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CurriculumVitaeWorkExperiences">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Company" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="From" Type="datetime" Nullable="false" />
+          <Property Name="To" Type="datetime" Nullable="false" />
+          <Property Name="Positions" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Tasks" Type="nvarchar" MaxLength="3000" Nullable="false" />
+          <Property Name="CurriculumVitaeID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Home">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="HomeText" Type="text" Nullable="false" />
+          <Property Name="ModifyingDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Licences">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SoftwareName" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="ClientID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TradeMark" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="Copyright" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Licence" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="From" Type="date" Nullable="false" />
+          <Property Name="To" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="References">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Image" Type="image" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifyingDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tags">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Blogs__Admin__37A5467C">
+          <End Role="Admins" Type="Self.Admins" Multiplicity="1" />
+          <End Role="Blogs" Type="Self.Blogs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admins">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Blogs">
+              <PropertyRef Name="Admin" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BlogsTags__BlogI__3F466844">
+          <End Role="Blogs" Type="Self.Blogs" Multiplicity="1" />
+          <End Role="BlogsTags" Type="Self.BlogsTags" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Blogs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BlogsTags">
+              <PropertyRef Name="BlogID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BlogsTags__TagID__403A8C7D">
+          <End Role="Tags" Type="Self.Tags" Multiplicity="1" />
+          <End Role="BlogsTags" Type="Self.BlogsTags" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tags">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BlogsTags">
+              <PropertyRef Name="TagID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CurriculumVitaeContacts_ToTable">
+          <End Role="CurriculumVitae" Type="Self.CurriculumVitae" Multiplicity="1" />
+          <End Role="CurriculumVitaeContacts" Type="Self.CurriculumVitaeContacts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CurriculumVitae">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CurriculumVitaeContacts">
+              <PropertyRef Name="CurriculumVitaeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CurriculumVitaeHobbies_ToTable">
+          <End Role="CurriculumVitae" Type="Self.CurriculumVitae" Multiplicity="1" />
+          <End Role="CurriculumVitaeHobbies" Type="Self.CurriculumVitaeHobbies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CurriculumVitae">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CurriculumVitaeHobbies">
+              <PropertyRef Name="CurriculumVitaeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CurriculumVitaeLinguisticLanguages_ToTable">
+          <End Role="CurriculumVitae" Type="Self.CurriculumVitae" Multiplicity="1" />
+          <End Role="CurriculumVitaeLinguisticLanguages" Type="Self.CurriculumVitaeLinguisticLanguages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CurriculumVitae">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CurriculumVitaeLinguisticLanguages">
+              <PropertyRef Name="CurriculumVitaeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CurriculumVitaeOperatingSystems_ToTable">
+          <End Role="CurriculumVitae" Type="Self.CurriculumVitae" Multiplicity="1" />
+          <End Role="CurriculumVitaeOperatingSystems" Type="Self.CurriculumVitaeOperatingSystems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CurriculumVitae">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CurriculumVitaeOperatingSystems">
+              <PropertyRef Name="CurriculumVitaeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CurriculumVitaeProfessionalSkillsCircleDiagram_ToTable">
+          <End Role="CurriculumVitae" Type="Self.CurriculumVitae" Multiplicity="1" />
+          <End Role="CurriculumVitaeProfessionalSkillsCircleDiagram" Type="Self.CurriculumVitaeProfessionalSkillsCircleDiagram" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CurriculumVitae">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CurriculumVitaeProfessionalSkillsCircleDiagram">
+              <PropertyRef Name="CurriculumVitaeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CurriculumVitaeProgrammingLanguages_ToTable">
+          <End Role="CurriculumVitae" Type="Self.CurriculumVitae" Multiplicity="1" />
+          <End Role="CurriculumVitaeProgrammingLanguages" Type="Self.CurriculumVitaeProgrammingLanguages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CurriculumVitae">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CurriculumVitaeProgrammingLanguages">
+              <PropertyRef Name="CurriculumVitaeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CurriculumVitaeQualities_ToTable">
+          <End Role="CurriculumVitae" Type="Self.CurriculumVitae" Multiplicity="1" />
+          <End Role="CurriculumVitaeQualities" Type="Self.CurriculumVitaeQualities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CurriculumVitae">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CurriculumVitaeQualities">
+              <PropertyRef Name="CurriculumVitaeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CurriculumVitaeScholarships_ToTable">
+          <End Role="CurriculumVitae" Type="Self.CurriculumVitae" Multiplicity="1" />
+          <End Role="CurriculumVitaeScholarships" Type="Self.CurriculumVitaeScholarships" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CurriculumVitae">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CurriculumVitaeScholarships">
+              <PropertyRef Name="CurriculumVitaeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CurriculumVitaeSoftwares_ToTable">
+          <End Role="CurriculumVitae" Type="Self.CurriculumVitae" Multiplicity="1" />
+          <End Role="CurriculumVitaeSoftwares" Type="Self.CurriculumVitaeSoftwares" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CurriculumVitae">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CurriculumVitaeSoftwares">
+              <PropertyRef Name="CurriculumVitaeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CurriculumVitaeWorkExperiences_ToTable">
+          <End Role="CurriculumVitae" Type="Self.CurriculumVitae" Multiplicity="1" />
+          <End Role="CurriculumVitaeWorkExperiences" Type="Self.CurriculumVitaeWorkExperiences" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CurriculumVitae">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CurriculumVitaeWorkExperiences">
+              <PropertyRef Name="CurriculumVitaeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Licences_ToTable">
+          <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+          <End Role="Licences" Type="Self.Licences" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Licences">
+              <PropertyRef Name="ClientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="b3752ModelStoreContainer">
+          <EntitySet Name="Admins" EntityType="Self.Admins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Blogs" EntityType="Self.Blogs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BlogsTags" EntityType="Self.BlogsTags" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CurriculumVitae" EntityType="Self.CurriculumVitae" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CurriculumVitaeContacts" EntityType="Self.CurriculumVitaeContacts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CurriculumVitaeHobbies" EntityType="Self.CurriculumVitaeHobbies" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CurriculumVitaeLinguisticLanguages" EntityType="Self.CurriculumVitaeLinguisticLanguages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CurriculumVitaeOperatingSystems" EntityType="Self.CurriculumVitaeOperatingSystems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CurriculumVitaeProfessionalSkillsCircleDiagram" EntityType="Self.CurriculumVitaeProfessionalSkillsCircleDiagram" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CurriculumVitaeProgrammingLanguages" EntityType="Self.CurriculumVitaeProgrammingLanguages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CurriculumVitaeQualities" EntityType="Self.CurriculumVitaeQualities" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CurriculumVitaeScholarships" EntityType="Self.CurriculumVitaeScholarships" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CurriculumVitaeSoftwares" EntityType="Self.CurriculumVitaeSoftwares" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CurriculumVitaeWorkExperiences" EntityType="Self.CurriculumVitaeWorkExperiences" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Home" EntityType="Self.Home" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Licences" EntityType="Self.Licences" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="References" EntityType="Self.References" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tags" EntityType="Self.Tags" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Blogs__Admin__37A5467C" Association="Self.FK__Blogs__Admin__37A5467C">
+            <End Role="Admins" EntitySet="Admins" />
+            <End Role="Blogs" EntitySet="Blogs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BlogsTags__BlogI__3F466844" Association="Self.FK__BlogsTags__BlogI__3F466844">
+            <End Role="Blogs" EntitySet="Blogs" />
+            <End Role="BlogsTags" EntitySet="BlogsTags" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BlogsTags__TagID__403A8C7D" Association="Self.FK__BlogsTags__TagID__403A8C7D">
+            <End Role="Tags" EntitySet="Tags" />
+            <End Role="BlogsTags" EntitySet="BlogsTags" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CurriculumVitaeContacts_ToTable" Association="Self.FK_CurriculumVitaeContacts_ToTable">
+            <End Role="CurriculumVitae" EntitySet="CurriculumVitae" />
+            <End Role="CurriculumVitaeContacts" EntitySet="CurriculumVitaeContacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CurriculumVitaeHobbies_ToTable" Association="Self.FK_CurriculumVitaeHobbies_ToTable">
+            <End Role="CurriculumVitae" EntitySet="CurriculumVitae" />
+            <End Role="CurriculumVitaeHobbies" EntitySet="CurriculumVitaeHobbies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CurriculumVitaeLinguisticLanguages_ToTable" Association="Self.FK_CurriculumVitaeLinguisticLanguages_ToTable">
+            <End Role="CurriculumVitae" EntitySet="CurriculumVitae" />
+            <End Role="CurriculumVitaeLinguisticLanguages" EntitySet="CurriculumVitaeLinguisticLanguages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CurriculumVitaeOperatingSystems_ToTable" Association="Self.FK_CurriculumVitaeOperatingSystems_ToTable">
+            <End Role="CurriculumVitae" EntitySet="CurriculumVitae" />
+            <End Role="CurriculumVitaeOperatingSystems" EntitySet="CurriculumVitaeOperatingSystems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CurriculumVitaeProfessionalSkillsCircleDiagram_ToTable" Association="Self.FK_CurriculumVitaeProfessionalSkillsCircleDiagram_ToTable">
+            <End Role="CurriculumVitae" EntitySet="CurriculumVitae" />
+            <End Role="CurriculumVitaeProfessionalSkillsCircleDiagram" EntitySet="CurriculumVitaeProfessionalSkillsCircleDiagram" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CurriculumVitaeProgrammingLanguages_ToTable" Association="Self.FK_CurriculumVitaeProgrammingLanguages_ToTable">
+            <End Role="CurriculumVitae" EntitySet="CurriculumVitae" />
+            <End Role="CurriculumVitaeProgrammingLanguages" EntitySet="CurriculumVitaeProgrammingLanguages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CurriculumVitaeQualities_ToTable" Association="Self.FK_CurriculumVitaeQualities_ToTable">
+            <End Role="CurriculumVitae" EntitySet="CurriculumVitae" />
+            <End Role="CurriculumVitaeQualities" EntitySet="CurriculumVitaeQualities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CurriculumVitaeScholarships_ToTable" Association="Self.FK_CurriculumVitaeScholarships_ToTable">
+            <End Role="CurriculumVitae" EntitySet="CurriculumVitae" />
+            <End Role="CurriculumVitaeScholarships" EntitySet="CurriculumVitaeScholarships" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CurriculumVitaeSoftwares_ToTable" Association="Self.FK_CurriculumVitaeSoftwares_ToTable">
+            <End Role="CurriculumVitae" EntitySet="CurriculumVitae" />
+            <End Role="CurriculumVitaeSoftwares" EntitySet="CurriculumVitaeSoftwares" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CurriculumVitaeWorkExperiences_ToTable" Association="Self.FK_CurriculumVitaeWorkExperiences_ToTable">
+            <End Role="CurriculumVitae" EntitySet="CurriculumVitae" />
+            <End Role="CurriculumVitaeWorkExperiences" EntitySet="CurriculumVitaeWorkExperiences" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Licences_ToTable" Association="Self.FK_Licences_ToTable">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="Licences" EntitySet="Licences" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="b3752Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Username" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="35" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Blogs" Relationship="Self.FK__Blogs__Admin__37A5467C" FromRole="Admins" ToRole="Blogs" />
+        </EntityType>
+        <EntityType Name="Blog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Url" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifyingDate" Type="DateTime" Precision="3" />
+          <Property Name="Body" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Admin" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="Admin1" Relationship="Self.FK__Blogs__Admin__37A5467C" FromRole="Blogs" ToRole="Admins" />
+          <NavigationProperty Name="BlogsTags" Relationship="Self.FK__BlogsTags__BlogI__3F466844" FromRole="Blogs" ToRole="BlogsTags" />
+        </EntityType>
+        <EntityType Name="BlogsTag">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="BlogID" Type="Guid" Nullable="false" />
+          <Property Name="TagID" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="Blog" Relationship="Self.FK__BlogsTags__BlogI__3F466844" FromRole="BlogsTags" ToRole="Blogs" />
+          <NavigationProperty Name="Tag" Relationship="Self.FK__BlogsTags__TagID__403A8C7D" FromRole="BlogsTags" ToRole="Tags" />
+        </EntityType>
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EMail" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Licences" Relationship="Self.FK_Licences_ToTable" FromRole="Clients" ToRole="Licences" />
+        </EntityType>
+        <EntityType Name="CurriculumVitae">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="Lang" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="CurriculumVitaeContacts" Relationship="Self.FK_CurriculumVitaeContacts_ToTable" FromRole="CurriculumVitae" ToRole="CurriculumVitaeContacts" />
+          <NavigationProperty Name="CurriculumVitaeHobbies" Relationship="Self.FK_CurriculumVitaeHobbies_ToTable" FromRole="CurriculumVitae" ToRole="CurriculumVitaeHobbies" />
+          <NavigationProperty Name="CurriculumVitaeLinguisticLanguages" Relationship="Self.FK_CurriculumVitaeLinguisticLanguages_ToTable" FromRole="CurriculumVitae" ToRole="CurriculumVitaeLinguisticLanguages" />
+          <NavigationProperty Name="CurriculumVitaeOperatingSystems" Relationship="Self.FK_CurriculumVitaeOperatingSystems_ToTable" FromRole="CurriculumVitae" ToRole="CurriculumVitaeOperatingSystems" />
+          <NavigationProperty Name="CurriculumVitaeProfessionalSkillsCircleDiagrams" Relationship="Self.FK_CurriculumVitaeProfessionalSkillsCircleDiagram_ToTable" FromRole="CurriculumVitae" ToRole="CurriculumVitaeProfessionalSkillsCircleDiagram" />
+          <NavigationProperty Name="CurriculumVitaeProgrammingLanguages" Relationship="Self.FK_CurriculumVitaeProgrammingLanguages_ToTable" FromRole="CurriculumVitae" ToRole="CurriculumVitaeProgrammingLanguages" />
+          <NavigationProperty Name="CurriculumVitaeQualities" Relationship="Self.FK_CurriculumVitaeQualities_ToTable" FromRole="CurriculumVitae" ToRole="CurriculumVitaeQualities" />
+          <NavigationProperty Name="CurriculumVitaeScholarships" Relationship="Self.FK_CurriculumVitaeScholarships_ToTable" FromRole="CurriculumVitae" ToRole="CurriculumVitaeScholarships" />
+          <NavigationProperty Name="CurriculumVitaeSoftwares" Relationship="Self.FK_CurriculumVitaeSoftwares_ToTable" FromRole="CurriculumVitae" ToRole="CurriculumVitaeSoftwares" />
+          <NavigationProperty Name="CurriculumVitaeWorkExperiences" Relationship="Self.FK_CurriculumVitaeWorkExperiences_ToTable" FromRole="CurriculumVitae" ToRole="CurriculumVitaeWorkExperiences" />
+        </EntityType>
+        <EntityType Name="CurriculumVitaeContact">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Info" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CurriculumVitaeID" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="CurriculumVitae" Relationship="Self.FK_CurriculumVitaeContacts_ToTable" FromRole="CurriculumVitaeContacts" ToRole="CurriculumVitae" />
+        </EntityType>
+        <EntityType Name="CurriculumVitaeHobby">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CurriculumVitaeID" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="CurriculumVitae" Relationship="Self.FK_CurriculumVitaeHobbies_ToTable" FromRole="CurriculumVitaeHobbies" ToRole="CurriculumVitae" />
+        </EntityType>
+        <EntityType Name="CurriculumVitaeLinguisticLanguage">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Level" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CurriculumVitaeID" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="CurriculumVitae" Relationship="Self.FK_CurriculumVitaeLinguisticLanguages_ToTable" FromRole="CurriculumVitaeLinguisticLanguages" ToRole="CurriculumVitae" />
+        </EntityType>
+        <EntityType Name="CurriculumVitaeOperatingSystem">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Level" Type="Int32" Nullable="false" />
+          <Property Name="CurriculumVitaeID" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="CurriculumVitae" Relationship="Self.FK_CurriculumVitaeOperatingSystems_ToTable" FromRole="CurriculumVitaeOperatingSystems" ToRole="CurriculumVitae" />
+        </EntityType>
+        <EntityType Name="CurriculumVitaeProfessionalSkillsCircleDiagram">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Pecent" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="CurriculumVitaeID" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="CurriculumVitae" Relationship="Self.FK_CurriculumVitaeProfessionalSkillsCircleDiagram_ToTable" FromRole="CurriculumVitaeProfessionalSkillsCircleDiagram" ToRole="CurriculumVitae" />
+        </EntityType>
+        <EntityType Name="CurriculumVitaeProgrammingLanguage">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Level" Type="Int32" Nullable="false" />
+          <Property Name="CurriculumVitaeID" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="CurriculumVitae" Relationship="Self.FK_CurriculumVitaeProgrammingLanguages_ToTable" FromRole="CurriculumVitaeProgrammingLanguages" ToRole="CurriculumVitae" />
+        </EntityType>
+        <EntityType Name="CurriculumVitaeQuality">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="CurriculumVitaeID" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="CurriculumVitae" Relationship="Self.FK_CurriculumVitaeQualities_ToTable" FromRole="CurriculumVitaeQualities" ToRole="CurriculumVitae" />
+        </EntityType>
+        <EntityType Name="CurriculumVitaeScholarship">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="School" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="From" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="To" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Professional" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CurriculumVitaeID" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="CurriculumVitae" Relationship="Self.FK_CurriculumVitaeScholarships_ToTable" FromRole="CurriculumVitaeScholarships" ToRole="CurriculumVitae" />
+        </EntityType>
+        <EntityType Name="CurriculumVitaeSoftware">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Level" Type="Int32" Nullable="false" />
+          <Property Name="CurriculumVitaeID" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="CurriculumVitae" Relationship="Self.FK_CurriculumVitaeSoftwares_ToTable" FromRole="CurriculumVitaeSoftwares" ToRole="CurriculumVitae" />
+        </EntityType>
+        <EntityType Name="CurriculumVitaeWorkExperience">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Company" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="From" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="To" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Positions" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Tasks" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CurriculumVitaeID" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="CurriculumVitae" Relationship="Self.FK_CurriculumVitaeWorkExperiences_ToTable" FromRole="CurriculumVitaeWorkExperiences" ToRole="CurriculumVitae" />
+        </EntityType>
+        <EntityType Name="Home">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="HomeText" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ModifyingDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Licence">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="SoftwareName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ClientID" Type="Guid" Nullable="false" />
+          <Property Name="TradeMark" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Copyright" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Licence1" Type="Guid" Nullable="false" />
+          <Property Name="From" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="To" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Client" Relationship="Self.FK_Licences_ToTable" FromRole="Licences" ToRole="Clients" />
+        </EntityType>
+        <EntityType Name="Reference">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifyingDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Tag">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="BlogsTags" Relationship="Self.FK__BlogsTags__TagID__403A8C7D" FromRole="Tags" ToRole="BlogsTags" />
+        </EntityType>
+        <Association Name="FK__Blogs__Admin__37A5467C">
+          <End Role="Admins" Type="Self.Admin" Multiplicity="1" />
+          <End Role="Blogs" Type="Self.Blog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admins">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Blogs">
+              <PropertyRef Name="Admin" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BlogsTags__BlogI__3F466844">
+          <End Role="Blogs" Type="Self.Blog" Multiplicity="1" />
+          <End Role="BlogsTags" Type="Self.BlogsTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Blogs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BlogsTags">
+              <PropertyRef Name="BlogID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BlogsTags__TagID__403A8C7D">
+          <End Role="Tags" Type="Self.Tag" Multiplicity="1" />
+          <End Role="BlogsTags" Type="Self.BlogsTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tags">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BlogsTags">
+              <PropertyRef Name="TagID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Licences_ToTable">
+          <End Role="Clients" Type="Self.Client" Multiplicity="1" />
+          <End Role="Licences" Type="Self.Licence" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Licences">
+              <PropertyRef Name="ClientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CurriculumVitaeContacts_ToTable">
+          <End Role="CurriculumVitae" Type="Self.CurriculumVitae" Multiplicity="1" />
+          <End Role="CurriculumVitaeContacts" Type="Self.CurriculumVitaeContact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CurriculumVitae">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CurriculumVitaeContacts">
+              <PropertyRef Name="CurriculumVitaeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CurriculumVitaeHobbies_ToTable">
+          <End Role="CurriculumVitae" Type="Self.CurriculumVitae" Multiplicity="1" />
+          <End Role="CurriculumVitaeHobbies" Type="Self.CurriculumVitaeHobby" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CurriculumVitae">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CurriculumVitaeHobbies">
+              <PropertyRef Name="CurriculumVitaeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CurriculumVitaeLinguisticLanguages_ToTable">
+          <End Role="CurriculumVitae" Type="Self.CurriculumVitae" Multiplicity="1" />
+          <End Role="CurriculumVitaeLinguisticLanguages" Type="Self.CurriculumVitaeLinguisticLanguage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CurriculumVitae">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CurriculumVitaeLinguisticLanguages">
+              <PropertyRef Name="CurriculumVitaeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CurriculumVitaeOperatingSystems_ToTable">
+          <End Role="CurriculumVitae" Type="Self.CurriculumVitae" Multiplicity="1" />
+          <End Role="CurriculumVitaeOperatingSystems" Type="Self.CurriculumVitaeOperatingSystem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CurriculumVitae">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CurriculumVitaeOperatingSystems">
+              <PropertyRef Name="CurriculumVitaeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CurriculumVitaeProfessionalSkillsCircleDiagram_ToTable">
+          <End Role="CurriculumVitae" Type="Self.CurriculumVitae" Multiplicity="1" />
+          <End Role="CurriculumVitaeProfessionalSkillsCircleDiagram" Type="Self.CurriculumVitaeProfessionalSkillsCircleDiagram" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CurriculumVitae">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CurriculumVitaeProfessionalSkillsCircleDiagram">
+              <PropertyRef Name="CurriculumVitaeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CurriculumVitaeProgrammingLanguages_ToTable">
+          <End Role="CurriculumVitae" Type="Self.CurriculumVitae" Multiplicity="1" />
+          <End Role="CurriculumVitaeProgrammingLanguages" Type="Self.CurriculumVitaeProgrammingLanguage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CurriculumVitae">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CurriculumVitaeProgrammingLanguages">
+              <PropertyRef Name="CurriculumVitaeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CurriculumVitaeQualities_ToTable">
+          <End Role="CurriculumVitae" Type="Self.CurriculumVitae" Multiplicity="1" />
+          <End Role="CurriculumVitaeQualities" Type="Self.CurriculumVitaeQuality" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CurriculumVitae">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CurriculumVitaeQualities">
+              <PropertyRef Name="CurriculumVitaeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CurriculumVitaeScholarships_ToTable">
+          <End Role="CurriculumVitae" Type="Self.CurriculumVitae" Multiplicity="1" />
+          <End Role="CurriculumVitaeScholarships" Type="Self.CurriculumVitaeScholarship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CurriculumVitae">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CurriculumVitaeScholarships">
+              <PropertyRef Name="CurriculumVitaeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CurriculumVitaeSoftwares_ToTable">
+          <End Role="CurriculumVitae" Type="Self.CurriculumVitae" Multiplicity="1" />
+          <End Role="CurriculumVitaeSoftwares" Type="Self.CurriculumVitaeSoftware" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CurriculumVitae">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CurriculumVitaeSoftwares">
+              <PropertyRef Name="CurriculumVitaeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CurriculumVitaeWorkExperiences_ToTable">
+          <End Role="CurriculumVitae" Type="Self.CurriculumVitae" Multiplicity="1" />
+          <End Role="CurriculumVitaeWorkExperiences" Type="Self.CurriculumVitaeWorkExperience" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CurriculumVitae">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CurriculumVitaeWorkExperiences">
+              <PropertyRef Name="CurriculumVitaeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="b3752Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Admins" EntityType="Self.Admin" />
+          <EntitySet Name="Blogs" EntityType="Self.Blog" />
+          <EntitySet Name="BlogsTags" EntityType="Self.BlogsTag" />
+          <EntitySet Name="Clients" EntityType="Self.Client" />
+          <EntitySet Name="CurriculumVitaes" EntityType="Self.CurriculumVitae" />
+          <EntitySet Name="CurriculumVitaeContacts" EntityType="Self.CurriculumVitaeContact" />
+          <EntitySet Name="CurriculumVitaeHobbies" EntityType="Self.CurriculumVitaeHobby" />
+          <EntitySet Name="CurriculumVitaeLinguisticLanguages" EntityType="Self.CurriculumVitaeLinguisticLanguage" />
+          <EntitySet Name="CurriculumVitaeOperatingSystems" EntityType="Self.CurriculumVitaeOperatingSystem" />
+          <EntitySet Name="CurriculumVitaeProfessionalSkillsCircleDiagrams" EntityType="Self.CurriculumVitaeProfessionalSkillsCircleDiagram" />
+          <EntitySet Name="CurriculumVitaeProgrammingLanguages" EntityType="Self.CurriculumVitaeProgrammingLanguage" />
+          <EntitySet Name="CurriculumVitaeQualities" EntityType="Self.CurriculumVitaeQuality" />
+          <EntitySet Name="CurriculumVitaeScholarships" EntityType="Self.CurriculumVitaeScholarship" />
+          <EntitySet Name="CurriculumVitaeSoftwares" EntityType="Self.CurriculumVitaeSoftware" />
+          <EntitySet Name="CurriculumVitaeWorkExperiences" EntityType="Self.CurriculumVitaeWorkExperience" />
+          <EntitySet Name="Homes" EntityType="Self.Home" />
+          <EntitySet Name="Licences" EntityType="Self.Licence" />
+          <EntitySet Name="References" EntityType="Self.Reference" />
+          <EntitySet Name="Tags" EntityType="Self.Tag" />
+          <AssociationSet Name="FK__Blogs__Admin__37A5467C" Association="Self.FK__Blogs__Admin__37A5467C">
+            <End Role="Admins" EntitySet="Admins" />
+            <End Role="Blogs" EntitySet="Blogs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BlogsTags__BlogI__3F466844" Association="Self.FK__BlogsTags__BlogI__3F466844">
+            <End Role="Blogs" EntitySet="Blogs" />
+            <End Role="BlogsTags" EntitySet="BlogsTags" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BlogsTags__TagID__403A8C7D" Association="Self.FK__BlogsTags__TagID__403A8C7D">
+            <End Role="Tags" EntitySet="Tags" />
+            <End Role="BlogsTags" EntitySet="BlogsTags" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Licences_ToTable" Association="Self.FK_Licences_ToTable">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="Licences" EntitySet="Licences" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CurriculumVitaeContacts_ToTable" Association="Self.FK_CurriculumVitaeContacts_ToTable">
+            <End Role="CurriculumVitae" EntitySet="CurriculumVitaes" />
+            <End Role="CurriculumVitaeContacts" EntitySet="CurriculumVitaeContacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CurriculumVitaeHobbies_ToTable" Association="Self.FK_CurriculumVitaeHobbies_ToTable">
+            <End Role="CurriculumVitae" EntitySet="CurriculumVitaes" />
+            <End Role="CurriculumVitaeHobbies" EntitySet="CurriculumVitaeHobbies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CurriculumVitaeLinguisticLanguages_ToTable" Association="Self.FK_CurriculumVitaeLinguisticLanguages_ToTable">
+            <End Role="CurriculumVitae" EntitySet="CurriculumVitaes" />
+            <End Role="CurriculumVitaeLinguisticLanguages" EntitySet="CurriculumVitaeLinguisticLanguages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CurriculumVitaeOperatingSystems_ToTable" Association="Self.FK_CurriculumVitaeOperatingSystems_ToTable">
+            <End Role="CurriculumVitae" EntitySet="CurriculumVitaes" />
+            <End Role="CurriculumVitaeOperatingSystems" EntitySet="CurriculumVitaeOperatingSystems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CurriculumVitaeProfessionalSkillsCircleDiagram_ToTable" Association="Self.FK_CurriculumVitaeProfessionalSkillsCircleDiagram_ToTable">
+            <End Role="CurriculumVitae" EntitySet="CurriculumVitaes" />
+            <End Role="CurriculumVitaeProfessionalSkillsCircleDiagram" EntitySet="CurriculumVitaeProfessionalSkillsCircleDiagrams" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CurriculumVitaeProgrammingLanguages_ToTable" Association="Self.FK_CurriculumVitaeProgrammingLanguages_ToTable">
+            <End Role="CurriculumVitae" EntitySet="CurriculumVitaes" />
+            <End Role="CurriculumVitaeProgrammingLanguages" EntitySet="CurriculumVitaeProgrammingLanguages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CurriculumVitaeQualities_ToTable" Association="Self.FK_CurriculumVitaeQualities_ToTable">
+            <End Role="CurriculumVitae" EntitySet="CurriculumVitaes" />
+            <End Role="CurriculumVitaeQualities" EntitySet="CurriculumVitaeQualities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CurriculumVitaeScholarships_ToTable" Association="Self.FK_CurriculumVitaeScholarships_ToTable">
+            <End Role="CurriculumVitae" EntitySet="CurriculumVitaes" />
+            <End Role="CurriculumVitaeScholarships" EntitySet="CurriculumVitaeScholarships" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CurriculumVitaeSoftwares_ToTable" Association="Self.FK_CurriculumVitaeSoftwares_ToTable">
+            <End Role="CurriculumVitae" EntitySet="CurriculumVitaes" />
+            <End Role="CurriculumVitaeSoftwares" EntitySet="CurriculumVitaeSoftwares" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CurriculumVitaeWorkExperiences_ToTable" Association="Self.FK_CurriculumVitaeWorkExperiences_ToTable">
+            <End Role="CurriculumVitae" EntitySet="CurriculumVitaes" />
+            <End Role="CurriculumVitaeWorkExperiences" EntitySet="CurriculumVitaeWorkExperiences" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="b3752ModelStoreContainer" CdmEntityContainer="b3752Entities">
+          <EntitySetMapping Name="Admins">
+            <EntityTypeMapping TypeName="b3752Model.Admin">
+              <MappingFragment StoreEntitySet="Admins">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Blogs">
+            <EntityTypeMapping TypeName="b3752Model.Blog">
+              <MappingFragment StoreEntitySet="Blogs">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="ModifyingDate" ColumnName="ModifyingDate" />
+                <ScalarProperty Name="Body" ColumnName="Body" />
+                <ScalarProperty Name="Admin" ColumnName="Admin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BlogsTags">
+            <EntityTypeMapping TypeName="b3752Model.BlogsTag">
+              <MappingFragment StoreEntitySet="BlogsTags">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="BlogID" ColumnName="BlogID" />
+                <ScalarProperty Name="TagID" ColumnName="TagID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clients">
+            <EntityTypeMapping TypeName="b3752Model.Client">
+              <MappingFragment StoreEntitySet="Clients">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="EMail" ColumnName="EMail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CurriculumVitaes">
+            <EntityTypeMapping TypeName="b3752Model.CurriculumVitae">
+              <MappingFragment StoreEntitySet="CurriculumVitae">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Lang" ColumnName="Lang" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CurriculumVitaeContacts">
+            <EntityTypeMapping TypeName="b3752Model.CurriculumVitaeContact">
+              <MappingFragment StoreEntitySet="CurriculumVitaeContacts">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Info" ColumnName="Info" />
+                <ScalarProperty Name="CurriculumVitaeID" ColumnName="CurriculumVitaeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CurriculumVitaeHobbies">
+            <EntityTypeMapping TypeName="b3752Model.CurriculumVitaeHobby">
+              <MappingFragment StoreEntitySet="CurriculumVitaeHobbies">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CurriculumVitaeID" ColumnName="CurriculumVitaeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CurriculumVitaeLinguisticLanguages">
+            <EntityTypeMapping TypeName="b3752Model.CurriculumVitaeLinguisticLanguage">
+              <MappingFragment StoreEntitySet="CurriculumVitaeLinguisticLanguages">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="CurriculumVitaeID" ColumnName="CurriculumVitaeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CurriculumVitaeOperatingSystems">
+            <EntityTypeMapping TypeName="b3752Model.CurriculumVitaeOperatingSystem">
+              <MappingFragment StoreEntitySet="CurriculumVitaeOperatingSystems">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="CurriculumVitaeID" ColumnName="CurriculumVitaeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CurriculumVitaeProfessionalSkillsCircleDiagrams">
+            <EntityTypeMapping TypeName="b3752Model.CurriculumVitaeProfessionalSkillsCircleDiagram">
+              <MappingFragment StoreEntitySet="CurriculumVitaeProfessionalSkillsCircleDiagram">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Pecent" ColumnName="Pecent" />
+                <ScalarProperty Name="CurriculumVitaeID" ColumnName="CurriculumVitaeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CurriculumVitaeProgrammingLanguages">
+            <EntityTypeMapping TypeName="b3752Model.CurriculumVitaeProgrammingLanguage">
+              <MappingFragment StoreEntitySet="CurriculumVitaeProgrammingLanguages">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="CurriculumVitaeID" ColumnName="CurriculumVitaeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CurriculumVitaeQualities">
+            <EntityTypeMapping TypeName="b3752Model.CurriculumVitaeQuality">
+              <MappingFragment StoreEntitySet="CurriculumVitaeQualities">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CurriculumVitaeID" ColumnName="CurriculumVitaeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CurriculumVitaeScholarships">
+            <EntityTypeMapping TypeName="b3752Model.CurriculumVitaeScholarship">
+              <MappingFragment StoreEntitySet="CurriculumVitaeScholarships">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="School" ColumnName="School" />
+                <ScalarProperty Name="From" ColumnName="From" />
+                <ScalarProperty Name="To" ColumnName="To" />
+                <ScalarProperty Name="Professional" ColumnName="Professional" />
+                <ScalarProperty Name="CurriculumVitaeID" ColumnName="CurriculumVitaeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CurriculumVitaeSoftwares">
+            <EntityTypeMapping TypeName="b3752Model.CurriculumVitaeSoftware">
+              <MappingFragment StoreEntitySet="CurriculumVitaeSoftwares">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="CurriculumVitaeID" ColumnName="CurriculumVitaeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CurriculumVitaeWorkExperiences">
+            <EntityTypeMapping TypeName="b3752Model.CurriculumVitaeWorkExperience">
+              <MappingFragment StoreEntitySet="CurriculumVitaeWorkExperiences">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="From" ColumnName="From" />
+                <ScalarProperty Name="To" ColumnName="To" />
+                <ScalarProperty Name="Positions" ColumnName="Positions" />
+                <ScalarProperty Name="Tasks" ColumnName="Tasks" />
+                <ScalarProperty Name="CurriculumVitaeID" ColumnName="CurriculumVitaeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Homes">
+            <EntityTypeMapping TypeName="b3752Model.Home">
+              <MappingFragment StoreEntitySet="Home">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="HomeText" ColumnName="HomeText" />
+                <ScalarProperty Name="ModifyingDate" ColumnName="ModifyingDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Licences">
+            <EntityTypeMapping TypeName="b3752Model.Licence">
+              <MappingFragment StoreEntitySet="Licences">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SoftwareName" ColumnName="SoftwareName" />
+                <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+                <ScalarProperty Name="TradeMark" ColumnName="TradeMark" />
+                <ScalarProperty Name="Copyright" ColumnName="Copyright" />
+                <ScalarProperty Name="Licence1" ColumnName="Licence" />
+                <ScalarProperty Name="From" ColumnName="From" />
+                <ScalarProperty Name="To" ColumnName="To" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="References">
+            <EntityTypeMapping TypeName="b3752Model.Reference">
+              <MappingFragment StoreEntitySet="References">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="ModifyingDate" ColumnName="ModifyingDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tags">
+            <EntityTypeMapping TypeName="b3752Model.Tag">
+              <MappingFragment StoreEntitySet="Tags">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
