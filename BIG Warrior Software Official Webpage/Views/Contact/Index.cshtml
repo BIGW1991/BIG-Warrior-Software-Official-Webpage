@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="~/Publics/Styles/Styles.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="~/Publics/Images/vm.jpg" />
+    <title>Kapcsolat - Varga Máté (BIG Warrior Software) Hivatalos Oldala</title>
+</head>
+<body class="body">
+    <header class="MainHeader">
+        <nav>
+            <ul>
+                <li>@Html.ActionLink("Kezdőlap", "", "Home")</li>
+                <li>@Html.ActionLink("Curriculum Vitae", "", "CurriculumVitae")</li>
+                <li class="active">@Html.ActionLink("Kapcsolat", "", "Contact")</li>
+            </ul>
+        </nav>
+    </header>
+    <div class="MainContent">
+        <div class="Content">
+            <article id="Contact" class="TopContent-Contact">
+                <h1>Üzenet küldése</h1>
+                <form action="/Contact/SendMail" method="POST">
+                    <label for="Name">Név:</label>
+                    <input type="text" name="Name" />
+                    <label for="Email">E-mail:</label>
+                    <input type="text" name="Email" />
+                    <label for="Subject">Tárgy:</label>
+                    <input type="text" name="Subject" />
+                    <label for="Message">Üzenet:</label>
+                    <textarea name="Message"></textarea>
+                    @Html.Raw(ViewData["Captcha"])
+                    <label for="Captcha">Írja be a képen látható számjegyet:</label>
+                    <input type="text" name="Captcha"/>
+                    <button type="submit">Küldés</button>
+                    @Html.Raw(ViewData["Notification"])
+                </form>
+            </article>
+        </div>
+    </div>
+    <footer class="MainFooter">
+        <p><a href="#">BIG Warrior Software</a> &copy; @DateTime.Now.Year</p>
+    </footer>
+</body>
+</html>

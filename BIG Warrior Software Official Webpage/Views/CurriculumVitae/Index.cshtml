@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="~/Publics/Styles/Styles.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="~/Publics/Images/vm.jpg" />
+    <title>Curriculum Vitae - Varga Máté (BIG Warrior Software) Hivatalos Oldala</title>
+</head>
+<body class="body">
+    <header class="MainHeader">
+        <nav>
+            <ul>
+                <li>@Html.ActionLink("Kezdőlap", "", "Home")</li>
+                <li class="active">@Html.ActionLink("Curriculum Vitae", "", "CurriculumVitae")</li>
+                <li>@Html.ActionLink("Kapcsolat", "", "Contact")</li>
+            </ul>
+        </nav>
+    </header>
+    <div class="MainContent">
+        <div class="Content">
+            <article class="TopContent-CV">
+                <object class="" data="~/Publics/PDF/Varga Máté Önéletrajz.pdf" type="application/pdf">
+                </object>
+                <a id="DownloadLink" href="~/Publics/PDF/Varga Máté Önéletrajz.pdf" target="_blank">Letöltés</a>
+            </article>
+        </div>
+    </div>
+    <footer class="MainFooter">
+        <p><a href="#">BIG Warrior Software</a> &copy; @DateTime.Now.Year</p>
+    </footer>
+</body>
+</html>

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="b3752Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="b3752Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Admins">
           <Key>
             <PropertyRef Name="ID" />
@@ -428,12 +428,11 @@
             <End Role="Licences" EntitySet="Licences" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="b3752Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Admin">
+        <EntityType Name="Admins">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -441,33 +440,19 @@
           <Property Name="Name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Username" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="35" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Blogs" Relationship="Self.FK__Blogs__Admin__37A5467C" FromRole="Admins" ToRole="Blogs" />
+          <NavigationProperty Name="Blogs" Relationship="b3752Model.FK__Blogs__Admin__37A5467C" FromRole="Admins" ToRole="Blogs" />
         </EntityType>
-        <EntityType Name="Blog">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Guid" Nullable="false" />
-          <Property Name="Title" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Url" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="ModifyingDate" Type="DateTime" Precision="3" />
-          <Property Name="Body" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Admin" Type="Guid" Nullable="false" />
-          <NavigationProperty Name="Admin1" Relationship="Self.FK__Blogs__Admin__37A5467C" FromRole="Blogs" ToRole="Admins" />
-          <NavigationProperty Name="BlogsTags" Relationship="Self.FK__BlogsTags__BlogI__3F466844" FromRole="Blogs" ToRole="BlogsTags" />
-        </EntityType>
-        <EntityType Name="BlogsTag">
+        <EntityType Name="BlogsTags">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Guid" Nullable="false" />
           <Property Name="BlogID" Type="Guid" Nullable="false" />
           <Property Name="TagID" Type="Guid" Nullable="false" />
-          <NavigationProperty Name="Blog" Relationship="Self.FK__BlogsTags__BlogI__3F466844" FromRole="BlogsTags" ToRole="Blogs" />
-          <NavigationProperty Name="Tag" Relationship="Self.FK__BlogsTags__TagID__403A8C7D" FromRole="BlogsTags" ToRole="Tags" />
+          <NavigationProperty Name="Blogs" Relationship="b3752Model.FK__BlogsTags__BlogI__3F466844" FromRole="BlogsTags" ToRole="Blogs" />
+          <NavigationProperty Name="Tags" Relationship="b3752Model.FK__BlogsTags__TagID__403A8C7D" FromRole="BlogsTags" ToRole="Tags" />
         </EntityType>
-        <EntityType Name="Client">
+        <EntityType Name="Clients">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -488,14 +473,14 @@
           <NavigationProperty Name="CurriculumVitaeHobbies" Relationship="Self.FK_CurriculumVitaeHobbies_ToTable" FromRole="CurriculumVitae" ToRole="CurriculumVitaeHobbies" />
           <NavigationProperty Name="CurriculumVitaeLinguisticLanguages" Relationship="Self.FK_CurriculumVitaeLinguisticLanguages_ToTable" FromRole="CurriculumVitae" ToRole="CurriculumVitaeLinguisticLanguages" />
           <NavigationProperty Name="CurriculumVitaeOperatingSystems" Relationship="Self.FK_CurriculumVitaeOperatingSystems_ToTable" FromRole="CurriculumVitae" ToRole="CurriculumVitaeOperatingSystems" />
-          <NavigationProperty Name="CurriculumVitaeProfessionalSkillsCircleDiagrams" Relationship="Self.FK_CurriculumVitaeProfessionalSkillsCircleDiagram_ToTable" FromRole="CurriculumVitae" ToRole="CurriculumVitaeProfessionalSkillsCircleDiagram" />
+          <NavigationProperty Name="CurriculumVitaeProfessionalSkillsCircleDiagram" Relationship="Self.FK_CurriculumVitaeProfessionalSkillsCircleDiagram_ToTable" FromRole="CurriculumVitae" ToRole="CurriculumVitaeProfessionalSkillsCircleDiagram" />
           <NavigationProperty Name="CurriculumVitaeProgrammingLanguages" Relationship="Self.FK_CurriculumVitaeProgrammingLanguages_ToTable" FromRole="CurriculumVitae" ToRole="CurriculumVitaeProgrammingLanguages" />
           <NavigationProperty Name="CurriculumVitaeQualities" Relationship="Self.FK_CurriculumVitaeQualities_ToTable" FromRole="CurriculumVitae" ToRole="CurriculumVitaeQualities" />
           <NavigationProperty Name="CurriculumVitaeScholarships" Relationship="Self.FK_CurriculumVitaeScholarships_ToTable" FromRole="CurriculumVitae" ToRole="CurriculumVitaeScholarships" />
           <NavigationProperty Name="CurriculumVitaeSoftwares" Relationship="Self.FK_CurriculumVitaeSoftwares_ToTable" FromRole="CurriculumVitae" ToRole="CurriculumVitaeSoftwares" />
           <NavigationProperty Name="CurriculumVitaeWorkExperiences" Relationship="Self.FK_CurriculumVitaeWorkExperiences_ToTable" FromRole="CurriculumVitae" ToRole="CurriculumVitaeWorkExperiences" />
         </EntityType>
-        <EntityType Name="CurriculumVitaeContact">
+        <EntityType Name="CurriculumVitaeContacts">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -505,7 +490,7 @@
           <Property Name="CurriculumVitaeID" Type="Guid" Nullable="false" />
           <NavigationProperty Name="CurriculumVitae" Relationship="Self.FK_CurriculumVitaeContacts_ToTable" FromRole="CurriculumVitaeContacts" ToRole="CurriculumVitae" />
         </EntityType>
-        <EntityType Name="CurriculumVitaeHobby">
+        <EntityType Name="CurriculumVitaeHobbies">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -514,7 +499,7 @@
           <Property Name="CurriculumVitaeID" Type="Guid" Nullable="false" />
           <NavigationProperty Name="CurriculumVitae" Relationship="Self.FK_CurriculumVitaeHobbies_ToTable" FromRole="CurriculumVitaeHobbies" ToRole="CurriculumVitae" />
         </EntityType>
-        <EntityType Name="CurriculumVitaeLinguisticLanguage">
+        <EntityType Name="CurriculumVitaeLinguisticLanguages">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -524,7 +509,7 @@
           <Property Name="CurriculumVitaeID" Type="Guid" Nullable="false" />
           <NavigationProperty Name="CurriculumVitae" Relationship="Self.FK_CurriculumVitaeLinguisticLanguages_ToTable" FromRole="CurriculumVitaeLinguisticLanguages" ToRole="CurriculumVitae" />
         </EntityType>
-        <EntityType Name="CurriculumVitaeOperatingSystem">
+        <EntityType Name="CurriculumVitaeOperatingSystems">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -544,7 +529,7 @@
           <Property Name="CurriculumVitaeID" Type="Guid" Nullable="false" />
           <NavigationProperty Name="CurriculumVitae" Relationship="Self.FK_CurriculumVitaeProfessionalSkillsCircleDiagram_ToTable" FromRole="CurriculumVitaeProfessionalSkillsCircleDiagram" ToRole="CurriculumVitae" />
         </EntityType>
-        <EntityType Name="CurriculumVitaeProgrammingLanguage">
+        <EntityType Name="CurriculumVitaeProgrammingLanguages">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -554,7 +539,7 @@
           <Property Name="CurriculumVitaeID" Type="Guid" Nullable="false" />
           <NavigationProperty Name="CurriculumVitae" Relationship="Self.FK_CurriculumVitaeProgrammingLanguages_ToTable" FromRole="CurriculumVitaeProgrammingLanguages" ToRole="CurriculumVitae" />
         </EntityType>
-        <EntityType Name="CurriculumVitaeQuality">
+        <EntityType Name="CurriculumVitaeQualities">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -563,7 +548,7 @@
           <Property Name="CurriculumVitaeID" Type="Guid" Nullable="false" />
           <NavigationProperty Name="CurriculumVitae" Relationship="Self.FK_CurriculumVitaeQualities_ToTable" FromRole="CurriculumVitaeQualities" ToRole="CurriculumVitae" />
         </EntityType>
-        <EntityType Name="CurriculumVitaeScholarship">
+        <EntityType Name="CurriculumVitaeScholarships">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -575,7 +560,7 @@
           <Property Name="CurriculumVitaeID" Type="Guid" Nullable="false" />
           <NavigationProperty Name="CurriculumVitae" Relationship="Self.FK_CurriculumVitaeScholarships_ToTable" FromRole="CurriculumVitaeScholarships" ToRole="CurriculumVitae" />
         </EntityType>
-        <EntityType Name="CurriculumVitaeSoftware">
+        <EntityType Name="CurriculumVitaeSoftwares">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -585,7 +570,7 @@
           <Property Name="CurriculumVitaeID" Type="Guid" Nullable="false" />
           <NavigationProperty Name="CurriculumVitae" Relationship="Self.FK_CurriculumVitaeSoftwares_ToTable" FromRole="CurriculumVitaeSoftwares" ToRole="CurriculumVitae" />
         </EntityType>
-        <EntityType Name="CurriculumVitaeWorkExperience">
+        <EntityType Name="CurriculumVitaeWorkExperiences">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -606,7 +591,7 @@
           <Property Name="HomeText" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ModifyingDate" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
-        <EntityType Name="Licence">
+        <EntityType Name="Licences">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -615,12 +600,12 @@
           <Property Name="ClientID" Type="Guid" Nullable="false" />
           <Property Name="TradeMark" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Copyright" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Licence1" Type="Guid" Nullable="false" />
+          <Property Name="Licence" Type="Guid" Nullable="false" />
           <Property Name="From" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="To" Type="DateTime" Nullable="false" Precision="0" />
-          <NavigationProperty Name="Client" Relationship="Self.FK_Licences_ToTable" FromRole="Licences" ToRole="Clients" />
+          <NavigationProperty Name="Clients" Relationship="Self.FK_Licences_ToTable" FromRole="Licences" ToRole="Clients" />
         </EntityType>
-        <EntityType Name="Reference">
+        <EntityType Name="References">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -631,53 +616,9 @@
           <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ModifyingDate" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
-        <EntityType Name="Tag">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Guid" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="BlogsTags" Relationship="Self.FK__BlogsTags__TagID__403A8C7D" FromRole="Tags" ToRole="BlogsTags" />
-        </EntityType>
-        <Association Name="FK__Blogs__Admin__37A5467C">
-          <End Role="Admins" Type="Self.Admin" Multiplicity="1" />
-          <End Role="Blogs" Type="Self.Blog" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Admins">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Blogs">
-              <PropertyRef Name="Admin" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__BlogsTags__BlogI__3F466844">
-          <End Role="Blogs" Type="Self.Blog" Multiplicity="1" />
-          <End Role="BlogsTags" Type="Self.BlogsTag" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Blogs">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="BlogsTags">
-              <PropertyRef Name="BlogID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__BlogsTags__TagID__403A8C7D">
-          <End Role="Tags" Type="Self.Tag" Multiplicity="1" />
-          <End Role="BlogsTags" Type="Self.BlogsTag" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Tags">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="BlogsTags">
-              <PropertyRef Name="TagID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Licences_ToTable">
-          <End Role="Clients" Type="Self.Client" Multiplicity="1" />
-          <End Role="Licences" Type="Self.Licence" Multiplicity="*" />
+          <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+          <End Role="Licences" Type="Self.Licences" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Clients">
               <PropertyRef Name="ID" />
@@ -689,7 +630,7 @@
         </Association>
         <Association Name="FK_CurriculumVitaeContacts_ToTable">
           <End Role="CurriculumVitae" Type="Self.CurriculumVitae" Multiplicity="1" />
-          <End Role="CurriculumVitaeContacts" Type="Self.CurriculumVitaeContact" Multiplicity="*" />
+          <End Role="CurriculumVitaeContacts" Type="Self.CurriculumVitaeContacts" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CurriculumVitae">
               <PropertyRef Name="ID" />
@@ -701,7 +642,7 @@
         </Association>
         <Association Name="FK_CurriculumVitaeHobbies_ToTable">
           <End Role="CurriculumVitae" Type="Self.CurriculumVitae" Multiplicity="1" />
-          <End Role="CurriculumVitaeHobbies" Type="Self.CurriculumVitaeHobby" Multiplicity="*" />
+          <End Role="CurriculumVitaeHobbies" Type="Self.CurriculumVitaeHobbies" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CurriculumVitae">
               <PropertyRef Name="ID" />
@@ -713,7 +654,7 @@
         </Association>
         <Association Name="FK_CurriculumVitaeLinguisticLanguages_ToTable">
           <End Role="CurriculumVitae" Type="Self.CurriculumVitae" Multiplicity="1" />
-          <End Role="CurriculumVitaeLinguisticLanguages" Type="Self.CurriculumVitaeLinguisticLanguage" Multiplicity="*" />
+          <End Role="CurriculumVitaeLinguisticLanguages" Type="Self.CurriculumVitaeLinguisticLanguages" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CurriculumVitae">
               <PropertyRef Name="ID" />
@@ -725,7 +666,7 @@
         </Association>
         <Association Name="FK_CurriculumVitaeOperatingSystems_ToTable">
           <End Role="CurriculumVitae" Type="Self.CurriculumVitae" Multiplicity="1" />
-          <End Role="CurriculumVitaeOperatingSystems" Type="Self.CurriculumVitaeOperatingSystem" Multiplicity="*" />
+          <End Role="CurriculumVitaeOperatingSystems" Type="Self.CurriculumVitaeOperatingSystems" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CurriculumVitae">
               <PropertyRef Name="ID" />
@@ -749,7 +690,7 @@
         </Association>
         <Association Name="FK_CurriculumVitaeProgrammingLanguages_ToTable">
           <End Role="CurriculumVitae" Type="Self.CurriculumVitae" Multiplicity="1" />
-          <End Role="CurriculumVitaeProgrammingLanguages" Type="Self.CurriculumVitaeProgrammingLanguage" Multiplicity="*" />
+          <End Role="CurriculumVitaeProgrammingLanguages" Type="Self.CurriculumVitaeProgrammingLanguages" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CurriculumVitae">
               <PropertyRef Name="ID" />
@@ -761,7 +702,7 @@
         </Association>
         <Association Name="FK_CurriculumVitaeQualities_ToTable">
           <End Role="CurriculumVitae" Type="Self.CurriculumVitae" Multiplicity="1" />
-          <End Role="CurriculumVitaeQualities" Type="Self.CurriculumVitaeQuality" Multiplicity="*" />
+          <End Role="CurriculumVitaeQualities" Type="Self.CurriculumVitaeQualities" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CurriculumVitae">
               <PropertyRef Name="ID" />
@@ -773,7 +714,7 @@
         </Association>
         <Association Name="FK_CurriculumVitaeScholarships_ToTable">
           <End Role="CurriculumVitae" Type="Self.CurriculumVitae" Multiplicity="1" />
-          <End Role="CurriculumVitaeScholarships" Type="Self.CurriculumVitaeScholarship" Multiplicity="*" />
+          <End Role="CurriculumVitaeScholarships" Type="Self.CurriculumVitaeScholarships" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CurriculumVitae">
               <PropertyRef Name="ID" />
@@ -785,7 +726,7 @@
         </Association>
         <Association Name="FK_CurriculumVitaeSoftwares_ToTable">
           <End Role="CurriculumVitae" Type="Self.CurriculumVitae" Multiplicity="1" />
-          <End Role="CurriculumVitaeSoftwares" Type="Self.CurriculumVitaeSoftware" Multiplicity="*" />
+          <End Role="CurriculumVitaeSoftwares" Type="Self.CurriculumVitaeSoftwares" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CurriculumVitae">
               <PropertyRef Name="ID" />
@@ -797,7 +738,7 @@
         </Association>
         <Association Name="FK_CurriculumVitaeWorkExperiences_ToTable">
           <End Role="CurriculumVitae" Type="Self.CurriculumVitae" Multiplicity="1" />
-          <End Role="CurriculumVitaeWorkExperiences" Type="Self.CurriculumVitaeWorkExperience" Multiplicity="*" />
+          <End Role="CurriculumVitaeWorkExperiences" Type="Self.CurriculumVitaeWorkExperiences" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CurriculumVitae">
               <PropertyRef Name="ID" />
@@ -808,82 +749,140 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="b3752Entities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Admins" EntityType="Self.Admin" />
-          <EntitySet Name="Blogs" EntityType="Self.Blog" />
-          <EntitySet Name="BlogsTags" EntityType="Self.BlogsTag" />
-          <EntitySet Name="Clients" EntityType="Self.Client" />
-          <EntitySet Name="CurriculumVitaes" EntityType="Self.CurriculumVitae" />
-          <EntitySet Name="CurriculumVitaeContacts" EntityType="Self.CurriculumVitaeContact" />
-          <EntitySet Name="CurriculumVitaeHobbies" EntityType="Self.CurriculumVitaeHobby" />
-          <EntitySet Name="CurriculumVitaeLinguisticLanguages" EntityType="Self.CurriculumVitaeLinguisticLanguage" />
-          <EntitySet Name="CurriculumVitaeOperatingSystems" EntityType="Self.CurriculumVitaeOperatingSystem" />
-          <EntitySet Name="CurriculumVitaeProfessionalSkillsCircleDiagrams" EntityType="Self.CurriculumVitaeProfessionalSkillsCircleDiagram" />
-          <EntitySet Name="CurriculumVitaeProgrammingLanguages" EntityType="Self.CurriculumVitaeProgrammingLanguage" />
-          <EntitySet Name="CurriculumVitaeQualities" EntityType="Self.CurriculumVitaeQuality" />
-          <EntitySet Name="CurriculumVitaeScholarships" EntityType="Self.CurriculumVitaeScholarship" />
-          <EntitySet Name="CurriculumVitaeSoftwares" EntityType="Self.CurriculumVitaeSoftware" />
-          <EntitySet Name="CurriculumVitaeWorkExperiences" EntityType="Self.CurriculumVitaeWorkExperience" />
-          <EntitySet Name="Homes" EntityType="Self.Home" />
-          <EntitySet Name="Licences" EntityType="Self.Licence" />
-          <EntitySet Name="References" EntityType="Self.Reference" />
-          <EntitySet Name="Tags" EntityType="Self.Tag" />
-          <AssociationSet Name="FK__Blogs__Admin__37A5467C" Association="Self.FK__Blogs__Admin__37A5467C">
-            <End Role="Admins" EntitySet="Admins" />
-            <End Role="Blogs" EntitySet="Blogs" />
-          </AssociationSet>
-          <AssociationSet Name="FK__BlogsTags__BlogI__3F466844" Association="Self.FK__BlogsTags__BlogI__3F466844">
-            <End Role="Blogs" EntitySet="Blogs" />
-            <End Role="BlogsTags" EntitySet="BlogsTags" />
-          </AssociationSet>
-          <AssociationSet Name="FK__BlogsTags__TagID__403A8C7D" Association="Self.FK__BlogsTags__TagID__403A8C7D">
-            <End Role="Tags" EntitySet="Tags" />
-            <End Role="BlogsTags" EntitySet="BlogsTags" />
-          </AssociationSet>
+          <EntitySet Name="Admins" EntityType="Self.Admins" />
+          <EntitySet Name="BlogsTags" EntityType="Self.BlogsTags" />
+          <EntitySet Name="Clients" EntityType="Self.Clients" />
+          <EntitySet Name="CurriculumVitae" EntityType="Self.CurriculumVitae" />
+          <EntitySet Name="CurriculumVitaeContacts" EntityType="Self.CurriculumVitaeContacts" />
+          <EntitySet Name="CurriculumVitaeHobbies" EntityType="Self.CurriculumVitaeHobbies" />
+          <EntitySet Name="CurriculumVitaeLinguisticLanguages" EntityType="Self.CurriculumVitaeLinguisticLanguages" />
+          <EntitySet Name="CurriculumVitaeOperatingSystems" EntityType="Self.CurriculumVitaeOperatingSystems" />
+          <EntitySet Name="CurriculumVitaeProfessionalSkillsCircleDiagram" EntityType="Self.CurriculumVitaeProfessionalSkillsCircleDiagram" />
+          <EntitySet Name="CurriculumVitaeProgrammingLanguages" EntityType="Self.CurriculumVitaeProgrammingLanguages" />
+          <EntitySet Name="CurriculumVitaeQualities" EntityType="Self.CurriculumVitaeQualities" />
+          <EntitySet Name="CurriculumVitaeScholarships" EntityType="Self.CurriculumVitaeScholarships" />
+          <EntitySet Name="CurriculumVitaeSoftwares" EntityType="Self.CurriculumVitaeSoftwares" />
+          <EntitySet Name="CurriculumVitaeWorkExperiences" EntityType="Self.CurriculumVitaeWorkExperiences" />
+          <EntitySet Name="Home" EntityType="Self.Home" />
+          <EntitySet Name="Licences" EntityType="Self.Licences" />
+          <EntitySet Name="References" EntityType="Self.References" />
           <AssociationSet Name="FK_Licences_ToTable" Association="Self.FK_Licences_ToTable">
             <End Role="Clients" EntitySet="Clients" />
             <End Role="Licences" EntitySet="Licences" />
           </AssociationSet>
           <AssociationSet Name="FK_CurriculumVitaeContacts_ToTable" Association="Self.FK_CurriculumVitaeContacts_ToTable">
-            <End Role="CurriculumVitae" EntitySet="CurriculumVitaes" />
+            <End Role="CurriculumVitae" EntitySet="CurriculumVitae" />
             <End Role="CurriculumVitaeContacts" EntitySet="CurriculumVitaeContacts" />
           </AssociationSet>
           <AssociationSet Name="FK_CurriculumVitaeHobbies_ToTable" Association="Self.FK_CurriculumVitaeHobbies_ToTable">
-            <End Role="CurriculumVitae" EntitySet="CurriculumVitaes" />
+            <End Role="CurriculumVitae" EntitySet="CurriculumVitae" />
             <End Role="CurriculumVitaeHobbies" EntitySet="CurriculumVitaeHobbies" />
           </AssociationSet>
           <AssociationSet Name="FK_CurriculumVitaeLinguisticLanguages_ToTable" Association="Self.FK_CurriculumVitaeLinguisticLanguages_ToTable">
-            <End Role="CurriculumVitae" EntitySet="CurriculumVitaes" />
+            <End Role="CurriculumVitae" EntitySet="CurriculumVitae" />
             <End Role="CurriculumVitaeLinguisticLanguages" EntitySet="CurriculumVitaeLinguisticLanguages" />
           </AssociationSet>
           <AssociationSet Name="FK_CurriculumVitaeOperatingSystems_ToTable" Association="Self.FK_CurriculumVitaeOperatingSystems_ToTable">
-            <End Role="CurriculumVitae" EntitySet="CurriculumVitaes" />
+            <End Role="CurriculumVitae" EntitySet="CurriculumVitae" />
             <End Role="CurriculumVitaeOperatingSystems" EntitySet="CurriculumVitaeOperatingSystems" />
           </AssociationSet>
           <AssociationSet Name="FK_CurriculumVitaeProfessionalSkillsCircleDiagram_ToTable" Association="Self.FK_CurriculumVitaeProfessionalSkillsCircleDiagram_ToTable">
-            <End Role="CurriculumVitae" EntitySet="CurriculumVitaes" />
-            <End Role="CurriculumVitaeProfessionalSkillsCircleDiagram" EntitySet="CurriculumVitaeProfessionalSkillsCircleDiagrams" />
+            <End Role="CurriculumVitae" EntitySet="CurriculumVitae" />
+            <End Role="CurriculumVitaeProfessionalSkillsCircleDiagram" EntitySet="CurriculumVitaeProfessionalSkillsCircleDiagram" />
           </AssociationSet>
           <AssociationSet Name="FK_CurriculumVitaeProgrammingLanguages_ToTable" Association="Self.FK_CurriculumVitaeProgrammingLanguages_ToTable">
-            <End Role="CurriculumVitae" EntitySet="CurriculumVitaes" />
+            <End Role="CurriculumVitae" EntitySet="CurriculumVitae" />
             <End Role="CurriculumVitaeProgrammingLanguages" EntitySet="CurriculumVitaeProgrammingLanguages" />
           </AssociationSet>
           <AssociationSet Name="FK_CurriculumVitaeQualities_ToTable" Association="Self.FK_CurriculumVitaeQualities_ToTable">
-            <End Role="CurriculumVitae" EntitySet="CurriculumVitaes" />
+            <End Role="CurriculumVitae" EntitySet="CurriculumVitae" />
             <End Role="CurriculumVitaeQualities" EntitySet="CurriculumVitaeQualities" />
           </AssociationSet>
           <AssociationSet Name="FK_CurriculumVitaeScholarships_ToTable" Association="Self.FK_CurriculumVitaeScholarships_ToTable">
-            <End Role="CurriculumVitae" EntitySet="CurriculumVitaes" />
+            <End Role="CurriculumVitae" EntitySet="CurriculumVitae" />
             <End Role="CurriculumVitaeScholarships" EntitySet="CurriculumVitaeScholarships" />
           </AssociationSet>
           <AssociationSet Name="FK_CurriculumVitaeSoftwares_ToTable" Association="Self.FK_CurriculumVitaeSoftwares_ToTable">
-            <End Role="CurriculumVitae" EntitySet="CurriculumVitaes" />
+            <End Role="CurriculumVitae" EntitySet="CurriculumVitae" />
             <End Role="CurriculumVitaeSoftwares" EntitySet="CurriculumVitaeSoftwares" />
           </AssociationSet>
           <AssociationSet Name="FK_CurriculumVitaeWorkExperiences_ToTable" Association="Self.FK_CurriculumVitaeWorkExperiences_ToTable">
-            <End Role="CurriculumVitae" EntitySet="CurriculumVitaes" />
+            <End Role="CurriculumVitae" EntitySet="CurriculumVitae" />
             <End Role="CurriculumVitaeWorkExperiences" EntitySet="CurriculumVitaeWorkExperiences" />
           </AssociationSet>
+          <EntitySet Name="Blogs" EntityType="b3752Model.Blogs" />
+          <EntitySet Name="Tags" EntityType="b3752Model.Tags" />
+          <AssociationSet Name="FK__Blogs__Admin__37A5467C" Association="b3752Model.FK__Blogs__Admin__37A5467C">
+            <End Role="Admins" EntitySet="Admins" />
+            <End Role="Blogs" EntitySet="Blogs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BlogsTags__BlogI__3F466844" Association="b3752Model.FK__BlogsTags__BlogI__3F466844">
+            <End Role="Blogs" EntitySet="Blogs" />
+            <End Role="BlogsTags" EntitySet="BlogsTags" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BlogsTags__TagID__403A8C7D" Association="b3752Model.FK__BlogsTags__TagID__403A8C7D">
+            <End Role="Tags" EntitySet="Tags" />
+            <End Role="BlogsTags" EntitySet="BlogsTags" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Blogs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Url" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifyingDate" Type="DateTime" Precision="3" />
+          <Property Name="Body" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Admin" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="Admins" Relationship="b3752Model.FK__Blogs__Admin__37A5467C" FromRole="Blogs" ToRole="Admins" />
+          <NavigationProperty Name="BlogsTags" Relationship="b3752Model.FK__BlogsTags__BlogI__3F466844" FromRole="Blogs" ToRole="BlogsTags" />
+        </EntityType>
+        <EntityType Name="Tags">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="BlogsTags" Relationship="b3752Model.FK__BlogsTags__TagID__403A8C7D" FromRole="Tags" ToRole="BlogsTags" />
+        </EntityType>
+        <Association Name="FK__Blogs__Admin__37A5467C">
+          <End Type="b3752Model.Admins" Role="Admins" Multiplicity="1" />
+          <End Type="b3752Model.Blogs" Role="Blogs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admins">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Blogs">
+              <PropertyRef Name="Admin" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BlogsTags__BlogI__3F466844">
+          <End Type="b3752Model.Blogs" Role="Blogs" Multiplicity="1" />
+          <End Type="b3752Model.BlogsTags" Role="BlogsTags" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Blogs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BlogsTags">
+              <PropertyRef Name="BlogID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BlogsTags__TagID__403A8C7D">
+          <End Type="b3752Model.Tags" Role="Tags" Multiplicity="1" />
+          <End Type="b3752Model.BlogsTags" Role="BlogsTags" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tags">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BlogsTags">
+              <PropertyRef Name="TagID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -891,7 +890,7 @@
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="b3752ModelStoreContainer" CdmEntityContainer="b3752Entities">
           <EntitySetMapping Name="Admins">
-            <EntityTypeMapping TypeName="b3752Model.Admin">
+            <EntityTypeMapping TypeName="b3752Model.Admins">
               <MappingFragment StoreEntitySet="Admins">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -900,21 +899,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Blogs">
-            <EntityTypeMapping TypeName="b3752Model.Blog">
-              <MappingFragment StoreEntitySet="Blogs">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="Url" ColumnName="Url" />
-                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
-                <ScalarProperty Name="ModifyingDate" ColumnName="ModifyingDate" />
-                <ScalarProperty Name="Body" ColumnName="Body" />
-                <ScalarProperty Name="Admin" ColumnName="Admin" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="BlogsTags">
-            <EntityTypeMapping TypeName="b3752Model.BlogsTag">
+            <EntityTypeMapping TypeName="b3752Model.BlogsTags">
               <MappingFragment StoreEntitySet="BlogsTags">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="BlogID" ColumnName="BlogID" />
@@ -923,7 +909,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Clients">
-            <EntityTypeMapping TypeName="b3752Model.Client">
+            <EntityTypeMapping TypeName="b3752Model.Clients">
               <MappingFragment StoreEntitySet="Clients">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -931,7 +917,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="CurriculumVitaes">
+          <EntitySetMapping Name="CurriculumVitae">
             <EntityTypeMapping TypeName="b3752Model.CurriculumVitae">
               <MappingFragment StoreEntitySet="CurriculumVitae">
                 <ScalarProperty Name="ID" ColumnName="ID" />
@@ -942,7 +928,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CurriculumVitaeContacts">
-            <EntityTypeMapping TypeName="b3752Model.CurriculumVitaeContact">
+            <EntityTypeMapping TypeName="b3752Model.CurriculumVitaeContacts">
               <MappingFragment StoreEntitySet="CurriculumVitaeContacts">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -952,7 +938,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CurriculumVitaeHobbies">
-            <EntityTypeMapping TypeName="b3752Model.CurriculumVitaeHobby">
+            <EntityTypeMapping TypeName="b3752Model.CurriculumVitaeHobbies">
               <MappingFragment StoreEntitySet="CurriculumVitaeHobbies">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -961,7 +947,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CurriculumVitaeLinguisticLanguages">
-            <EntityTypeMapping TypeName="b3752Model.CurriculumVitaeLinguisticLanguage">
+            <EntityTypeMapping TypeName="b3752Model.CurriculumVitaeLinguisticLanguages">
               <MappingFragment StoreEntitySet="CurriculumVitaeLinguisticLanguages">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -971,7 +957,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CurriculumVitaeOperatingSystems">
-            <EntityTypeMapping TypeName="b3752Model.CurriculumVitaeOperatingSystem">
+            <EntityTypeMapping TypeName="b3752Model.CurriculumVitaeOperatingSystems">
               <MappingFragment StoreEntitySet="CurriculumVitaeOperatingSystems">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -980,7 +966,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="CurriculumVitaeProfessionalSkillsCircleDiagrams">
+          <EntitySetMapping Name="CurriculumVitaeProfessionalSkillsCircleDiagram">
             <EntityTypeMapping TypeName="b3752Model.CurriculumVitaeProfessionalSkillsCircleDiagram">
               <MappingFragment StoreEntitySet="CurriculumVitaeProfessionalSkillsCircleDiagram">
                 <ScalarProperty Name="ID" ColumnName="ID" />
@@ -991,7 +977,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CurriculumVitaeProgrammingLanguages">
-            <EntityTypeMapping TypeName="b3752Model.CurriculumVitaeProgrammingLanguage">
+            <EntityTypeMapping TypeName="b3752Model.CurriculumVitaeProgrammingLanguages">
               <MappingFragment StoreEntitySet="CurriculumVitaeProgrammingLanguages">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -1001,7 +987,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CurriculumVitaeQualities">
-            <EntityTypeMapping TypeName="b3752Model.CurriculumVitaeQuality">
+            <EntityTypeMapping TypeName="b3752Model.CurriculumVitaeQualities">
               <MappingFragment StoreEntitySet="CurriculumVitaeQualities">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -1010,7 +996,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CurriculumVitaeScholarships">
-            <EntityTypeMapping TypeName="b3752Model.CurriculumVitaeScholarship">
+            <EntityTypeMapping TypeName="b3752Model.CurriculumVitaeScholarships">
               <MappingFragment StoreEntitySet="CurriculumVitaeScholarships">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="School" ColumnName="School" />
@@ -1022,7 +1008,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CurriculumVitaeSoftwares">
-            <EntityTypeMapping TypeName="b3752Model.CurriculumVitaeSoftware">
+            <EntityTypeMapping TypeName="b3752Model.CurriculumVitaeSoftwares">
               <MappingFragment StoreEntitySet="CurriculumVitaeSoftwares">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -1032,7 +1018,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CurriculumVitaeWorkExperiences">
-            <EntityTypeMapping TypeName="b3752Model.CurriculumVitaeWorkExperience">
+            <EntityTypeMapping TypeName="b3752Model.CurriculumVitaeWorkExperiences">
               <MappingFragment StoreEntitySet="CurriculumVitaeWorkExperiences">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Company" ColumnName="Company" />
@@ -1044,7 +1030,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Homes">
+          <EntitySetMapping Name="Home">
             <EntityTypeMapping TypeName="b3752Model.Home">
               <MappingFragment StoreEntitySet="Home">
                 <ScalarProperty Name="ID" ColumnName="ID" />
@@ -1054,21 +1040,21 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Licences">
-            <EntityTypeMapping TypeName="b3752Model.Licence">
+            <EntityTypeMapping TypeName="b3752Model.Licences">
               <MappingFragment StoreEntitySet="Licences">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="SoftwareName" ColumnName="SoftwareName" />
                 <ScalarProperty Name="ClientID" ColumnName="ClientID" />
                 <ScalarProperty Name="TradeMark" ColumnName="TradeMark" />
                 <ScalarProperty Name="Copyright" ColumnName="Copyright" />
-                <ScalarProperty Name="Licence1" ColumnName="Licence" />
+                <ScalarProperty Name="Licence" ColumnName="Licence" />
                 <ScalarProperty Name="From" ColumnName="From" />
                 <ScalarProperty Name="To" ColumnName="To" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="References">
-            <EntityTypeMapping TypeName="b3752Model.Reference">
+            <EntityTypeMapping TypeName="b3752Model.References">
               <MappingFragment StoreEntitySet="References">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -1079,11 +1065,24 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Tags">
-            <EntityTypeMapping TypeName="b3752Model.Tag">
-              <MappingFragment StoreEntitySet="Tags">
+          <EntitySetMapping Name="Blogs">
+            <EntityTypeMapping TypeName="b3752Model.Blogs">
+              <MappingFragment StoreEntitySet="Blogs">
+                <ScalarProperty Name="Admin" ColumnName="Admin" />
+                <ScalarProperty Name="Body" ColumnName="Body" />
+                <ScalarProperty Name="ModifyingDate" ColumnName="ModifyingDate" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tags">
+            <EntityTypeMapping TypeName="b3752Model.Tags">
+              <MappingFragment StoreEntitySet="Tags">
                 <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1101,9 +1100,9 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>

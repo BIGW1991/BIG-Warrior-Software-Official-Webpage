@@ -18,7 +18,7 @@ namespace BIG_Warrior_Software_Official_Webpage.Areas.Admin.Controllers
             {
                 using (b3752Entities db = new b3752Entities())
                 {
-                    Models.Admin admin = db.Admins.Find(Guid.Parse(Session["AdminID"].ToString()));
+                    Models.Admins admin = db.Admins.Find(Guid.Parse(Session["AdminID"].ToString()));
                     if (admin!=null)
                         return View();
                     else

@@ -4,42 +4,34 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="~/Publics/Styles/Styles.css" type="text/css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="~/Publics/Images/vm.jpg" />
     <title>Kezdőlap - Varga Máté (BIG Warrior Software) Hivatalos Oldala</title>
 </head>
 <body class="body">
     <header class="MainHeader">
-        <nav class="Menu">
+        <nav>
             <ul>
-                <li>@Html.ActionLink("Kezdőlap", "Home")</li><li>@Html.ActionLink("Blog", "Blog")</li><li>@Html.ActionLink("Curriculum Vitae", "CurriculumVitae")</li><li>@Html.ActionLink("Referenciák", "References")</li><li>@Html.ActionLink("Kapcsolat","Contact")</li>
+                <li class="active">@Html.ActionLink("Kezdőlap","","Home")</li><li>@Html.ActionLink("Curriculum Vitae", "","CurriculumVitae")</li><li>@Html.ActionLink("Kapcsolat","","Contact")</li>
             </ul>
         </nav>
     </header>
     <div class="MainContent">
         <div class="Content">
-            <article class="TopContent">
-                <header>
-                    <h2><a href="#" title="First Post!">First Post</a></h2>
-                </header>
-                <footer>
-                    <p class="post-info">This post is written by Máté Varga</p>
-                </footer>
-                <content>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id quam at sem tempus tincidunt. Morbi ex dui, finibus ut malesuada eget, vestibulum ut urna. Praesent sit amet tellus cursus lacus rhoncus condimentum. Curabitur sed blandit libero. Morbi odio tortor, maximus quis tempor ac, fringilla et velit. Fusce eget vulputate velit, quis auctor lacus. Sed convallis eget justo nec accumsan. Nam est sem, interdum a venenatis in, hendrerit ut ex. Vestibulum eget velit est. Praesent vitae laoreet purus. Pellentesque faucibus ullamcorper risus eu hendrerit. Sed eget tristique quam, at dignissim augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vehicula libero urna. Phasellus sapien quam, volutpat eu vehicula et, rutrum eu justo. Sed quis eros eget tellus suscipit aliquam. Nullam eu suscipit metus. In porta bibendum tristique. Morbi ipsum erat, tristique nec bibendum a, faucibus vitae turpis. Praesent ac viverra nulla. Sed magna felis, volutpat quis risus vel, imperdiet commodo mauris. Aliquam in dictum mauris. Pellentesque luctus sollicitudin mattis. Curabitur urna turpis, ultrices eu risus eget, gravida interdum lacus. Nulla efficitur ante et iaculis gravida. Maecenas bibendum ex vitae enim lobortis volutpat. Pellentesque vitae rhoncus lorem. Donec lobortis laoreet enim, quis consectetur sem imperdiet eu. Pellentesque bibendum nulla risus, nec feugiat tellus efficitur a. Nam et tortor efficitur, bibendum odio et, scelerisque tellus. Donec vitae luctus ante. Aenean ultricies odio in metus tempor, id eleifend ligula eleifend.</p>
-                </content>
+            <article id="Introduction" class="TopContent">
+                @ViewData["Introduction"]
+                <img id="Profile" src="~/Publics/Images/vm.jpg"/>
+                <aside>
+                    <h1>Varga Máté</h1>
+                    <p class="">Fő profilom a szoftverfejlesztés</p> 
+                    <a href="https://www.facebook.com/BIGWarriorSoftware-280458721993319/"><img class="Link-Image" src="~/Publics/Images/facebook.png" /></a>
+                    <a href="https://linkedin.com/in/máté-varga-575109111"><img class="Link-Image" src="~/Publics/Images/linkedin.png" /></a>
+                    <a href="https://twitter.com/BIGWarriorSoft"><img class="Link-Image" src="~/Publics/Images/twitter.png" /></a>
+                </aside>
             </article>
         </div>
     </div>
-    <aside class="top-sidebar">
-
-    </aside>
-    <aside class="middle-sidebar">
-
-    </aside>
-    <aside class="bottom-sidebar">
-
-    </aside>
     <footer class="MainFooter">
-        <p>Minden jog fenntartva &copy; @DateTime.Now.Year</p>
+        <p><a href="#">BIG Warrior Software</a> &copy; @DateTime.Now.Year</p>
     </footer>
 </body>
 </html>

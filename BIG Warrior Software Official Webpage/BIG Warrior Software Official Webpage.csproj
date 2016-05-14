@@ -43,8 +43,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -80,9 +84,9 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -124,13 +128,775 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\b3752.mdf" />
+    <Content Include="App_Data\b3752.mdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="App_Data\b3752_log.ldf">
       <DependentUpon>b3752.mdf</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Areas\Admin\Publics\ckeditor\adapters\jquery.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\build-config.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\adapters\jquery.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\build-config.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\ckeditor.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\config.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\contents.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\af.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\ar.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\bg.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\bn.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\bs.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\ca.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\cs.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\cy.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\da.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\de-ch.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\de.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\el.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\en-au.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\en-ca.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\en-gb.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\en.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\eo.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\es.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\et.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\eu.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\fa.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\fi.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\fo.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\fr-ca.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\fr.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\gl.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\gu.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\he.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\hi.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\hr.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\hu.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\id.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\is.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\it.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\ja.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\ka.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\km.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\ko.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\ku.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\lt.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\lv.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\mk.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\mn.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\ms.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\nb.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\nl.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\no.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\pl.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\pt-br.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\pt.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\ro.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\ru.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\si.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\sk.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\sl.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\sq.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\sr-latn.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\sr.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\sv.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\th.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\tr.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\tt.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\ug.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\uk.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\vi.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\zh-cn.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\lang\zh.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\af.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\ar.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\bg.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\ca.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\cs.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\cy.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\da.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\de-ch.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\de.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\el.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\en-gb.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\en.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\eo.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\es.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\et.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\eu.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\fa.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\fi.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\fo.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\fr-ca.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\fr.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\gl.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\gu.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\he.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\hi.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\hr.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\hu.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\id.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\it.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\ja.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\km.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\ko.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\ku.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\lt.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\lv.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\mk.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\mn.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\nb.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\nl.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\no.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\pl.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\pt-br.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\pt.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\ro.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\ru.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\si.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\sk.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\sl.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\sq.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\sr-latn.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\sr.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\sv.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\th.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\tr.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\tt.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\ug.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\uk.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\vi.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\zh-cn.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\zh.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\a11yhelp\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\about\dialogs\about.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\about\dialogs\hidpi\logo_ckeditor.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\colordialog\dialogs\colordialog.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\div\dialogs\div.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\find\dialogs\find.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\flash\dialogs\flash.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\flash\images\placeholder.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\forms\dialogs\button.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\forms\dialogs\checkbox.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\forms\dialogs\form.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\forms\dialogs\hiddenfield.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\forms\dialogs\radio.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\forms\dialogs\select.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\forms\dialogs\textarea.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\forms\dialogs\textfield.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\forms\images\hiddenfield.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\icons.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\icons_hidpi.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\iframe\dialogs\iframe.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\iframe\images\placeholder.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\image\dialogs\image.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\image\images\noimage.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\link\dialogs\link.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\link\images\anchor.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\link\images\hidpi\anchor.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\liststyle\dialogs\liststyle.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\magicline\images\hidpi\icon-rtl.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\magicline\images\hidpi\icon.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\magicline\images\icon-rtl.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\magicline\images\icon.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\pagebreak\images\pagebreak.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\preview\preview.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\scayt\dialogs\options.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\showblocks\images\block_address.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\showblocks\images\block_blockquote.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\showblocks\images\block_div.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\showblocks\images\block_h1.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\showblocks\images\block_h2.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\showblocks\images\block_h3.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\showblocks\images\block_h4.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\showblocks\images\block_h5.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\showblocks\images\block_h6.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\showblocks\images\block_p.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\showblocks\images\block_pre.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\dialogs\smiley.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\angel_smile.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\angel_smile.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\angry_smile.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\angry_smile.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\broken_heart.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\broken_heart.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\confused_smile.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\confused_smile.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\cry_smile.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\cry_smile.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\devil_smile.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\devil_smile.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\embaressed_smile.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\embarrassed_smile.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\embarrassed_smile.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\envelope.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\envelope.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\heart.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\heart.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\kiss.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\kiss.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\lightbulb.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\lightbulb.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\omg_smile.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\omg_smile.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\regular_smile.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\regular_smile.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\sad_smile.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\sad_smile.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\shades_smile.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\shades_smile.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\teeth_smile.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\teeth_smile.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\thumbs_down.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\thumbs_down.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\thumbs_up.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\thumbs_up.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\tongue_smile.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\tongue_smile.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\tounge_smile.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\whatchutalkingabout_smile.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\whatchutalkingabout_smile.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\wink_smile.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\smiley\images\wink_smile.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\af.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\ar.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\bg.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\ca.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\cs.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\cy.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\da.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\de-ch.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\de.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\el.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\en-gb.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\en.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\eo.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\es.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\et.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\eu.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\fa.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\fi.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\fr-ca.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\fr.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\gl.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\he.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\hr.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\hu.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\id.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\it.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\ja.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\km.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\ko.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\ku.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\lt.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\lv.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\nb.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\nl.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\no.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\pl.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\pt-br.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\pt.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\ru.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\si.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\sk.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\sl.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\sq.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\sv.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\th.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\tr.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\tt.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\ug.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\uk.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\vi.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\zh-cn.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\zh.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\table\dialogs\table.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\templates\dialogs\templates.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\templates\dialogs\templates.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\templates\templates\default.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\templates\templates\images\template1.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\templates\templates\images\template2.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\templates\templates\images\template3.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\wsc\dialogs\wsc_ie.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\css\samples.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\img\github-top.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\img\header-bg.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\img\header-separator.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\img\logo.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\img\navigation-tip.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\index.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\js\sample.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\js\sf.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\old\ajax.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\old\api.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\old\appendto.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\old\assets\inlineall\logo.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\old\assets\outputxhtml\outputxhtml.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\old\assets\posteddata.php" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\old\assets\sample.jpg" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\old\assets\uilanguages\languages.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\old\datafiltering.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\old\dialog\assets\my_dialog.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\old\dialog\dialog.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\old\divreplace.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\old\enterkey\enterkey.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\old\htmlwriter\assets\outputforflash\outputforflash.swf" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\old\htmlwriter\assets\outputforflash\swfobject.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\old\htmlwriter\outputforflash.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\old\htmlwriter\outputhtml.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\old\index.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\old\inlineall.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\old\inlinebycode.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\old\inlinetextarea.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\old\jquery.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\old\magicline\magicline.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\old\readonly.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\old\replacebyclass.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\old\replacebycode.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\old\sample.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\old\sample.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\old\sample_posteddata.php" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\old\tabindex.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\old\toolbar\toolbar.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\old\uicolor.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\old\uilanguages.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\old\wysiwygarea\fullpage.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\old\xhtmlstyle.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\toolbarconfigurator\css\fontello.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\toolbarconfigurator\font\fontello.svg" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\toolbarconfigurator\font\LICENSE.txt" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\toolbarconfigurator\index.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\toolbarconfigurator\js\abstracttoolbarmodifier.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\toolbarconfigurator\js\fulltoolbareditor.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\toolbarconfigurator\js\toolbarmodifier.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\toolbarconfigurator\js\toolbartextmodifier.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\toolbarconfigurator\lib\codemirror\codemirror.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\toolbarconfigurator\lib\codemirror\codemirror.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\toolbarconfigurator\lib\codemirror\javascript.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\toolbarconfigurator\lib\codemirror\neo.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\toolbarconfigurator\lib\codemirror\show-hint.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\toolbarconfigurator\lib\codemirror\show-hint.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\skins\moono\dialog.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\skins\moono\dialog_ie.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\skins\moono\dialog_ie7.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\skins\moono\dialog_ie8.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\skins\moono\dialog_iequirks.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\skins\moono\editor.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\skins\moono\editor_gecko.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\skins\moono\editor_ie.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\skins\moono\editor_ie7.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\skins\moono\editor_ie8.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\skins\moono\editor_iequirks.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\skins\moono\icons.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\skins\moono\icons_hidpi.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\skins\moono\images\arrow.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\skins\moono\images\close.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\skins\moono\images\hidpi\close.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\skins\moono\images\hidpi\lock-open.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\skins\moono\images\hidpi\lock.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\skins\moono\images\hidpi\refresh.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\skins\moono\images\lock-open.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\skins\moono\images\lock.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\skins\moono\images\refresh.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\skins\moono\images\spinner.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\styles.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\config.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\contents.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\af.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\ar.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\bg.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\bn.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\bs.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\ca.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\cs.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\cy.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\da.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\de-ch.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\de.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\el.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\en-au.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\en-ca.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\en-gb.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\en.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\eo.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\es.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\et.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\eu.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\fa.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\fi.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\fo.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\fr-ca.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\fr.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\gl.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\gu.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\he.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\hi.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\hr.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\hu.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\id.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\is.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\it.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\ja.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\ka.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\km.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\ko.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\ku.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\lt.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\lv.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\mk.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\mn.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\ms.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\nb.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\nl.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\no.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\pl.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\pt-br.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\pt.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\ro.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\ru.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\si.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\sk.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\sl.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\sq.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\sr-latn.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\sr.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\sv.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\th.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\tr.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\tt.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\ug.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\uk.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\vi.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\zh-cn.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\lang\zh.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\af.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\ar.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\bg.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\ca.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\cs.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\cy.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\da.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\de-ch.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\de.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\el.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\en-gb.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\en.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\eo.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\es.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\et.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\eu.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\fa.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\fi.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\fo.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\fr-ca.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\fr.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\gl.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\gu.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\he.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\hi.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\hr.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\hu.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\id.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\it.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\ja.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\km.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\ko.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\ku.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\lt.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\lv.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\mk.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\mn.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\nb.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\nl.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\no.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\pl.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\pt-br.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\pt.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\ro.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\ru.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\si.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\sk.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\sl.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\sq.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\sr-latn.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\sr.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\sv.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\th.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\tr.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\tt.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\ug.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\uk.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\vi.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\zh-cn.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\zh.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\a11yhelp\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\about\dialogs\about.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\about\dialogs\hidpi\logo_ckeditor.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\colordialog\dialogs\colordialog.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\div\dialogs\div.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\find\dialogs\find.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\flash\dialogs\flash.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\flash\images\placeholder.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\forms\dialogs\button.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\forms\dialogs\checkbox.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\forms\dialogs\form.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\forms\dialogs\hiddenfield.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\forms\dialogs\radio.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\forms\dialogs\select.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\forms\dialogs\textarea.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\forms\dialogs\textfield.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\forms\images\hiddenfield.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\icons.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\icons_hidpi.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\iframe\dialogs\iframe.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\iframe\images\placeholder.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\image\dialogs\image.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\image\images\noimage.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\link\dialogs\link.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\link\images\anchor.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\link\images\hidpi\anchor.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\liststyle\dialogs\liststyle.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\magicline\images\hidpi\icon-rtl.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\magicline\images\hidpi\icon.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\magicline\images\icon-rtl.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\magicline\images\icon.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\pagebreak\images\pagebreak.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\preview\preview.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\scayt\dialogs\options.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\showblocks\images\block_address.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\showblocks\images\block_blockquote.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\showblocks\images\block_div.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\showblocks\images\block_h1.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\showblocks\images\block_h2.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\showblocks\images\block_h3.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\showblocks\images\block_h4.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\showblocks\images\block_h5.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\showblocks\images\block_h6.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\showblocks\images\block_p.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\showblocks\images\block_pre.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\dialogs\smiley.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\angel_smile.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\angel_smile.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\angry_smile.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\angry_smile.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\broken_heart.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\broken_heart.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\confused_smile.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\confused_smile.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\cry_smile.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\cry_smile.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\devil_smile.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\devil_smile.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\embaressed_smile.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\embarrassed_smile.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\embarrassed_smile.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\envelope.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\envelope.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\heart.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\heart.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\kiss.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\kiss.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\lightbulb.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\lightbulb.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\omg_smile.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\omg_smile.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\regular_smile.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\regular_smile.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\sad_smile.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\sad_smile.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\shades_smile.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\shades_smile.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\teeth_smile.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\teeth_smile.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\thumbs_down.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\thumbs_down.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\thumbs_up.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\thumbs_up.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\tongue_smile.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\tongue_smile.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\tounge_smile.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\whatchutalkingabout_smile.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\whatchutalkingabout_smile.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\wink_smile.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\smiley\images\wink_smile.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\af.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\ar.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\bg.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\ca.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\cs.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\cy.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\da.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\de-ch.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\de.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\el.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\en-gb.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\en.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\eo.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\es.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\et.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\eu.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\fa.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\fi.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\fr-ca.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\fr.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\gl.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\he.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\hr.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\hu.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\id.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\it.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\ja.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\km.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\ko.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\ku.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\lt.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\lv.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\nb.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\nl.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\no.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\pl.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\pt-br.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\pt.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\ru.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\si.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\sk.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\sl.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\sq.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\sv.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\th.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\tr.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\tt.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\ug.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\uk.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\vi.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\zh-cn.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\zh.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\table\dialogs\table.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\templates\dialogs\templates.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\templates\dialogs\templates.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\templates\templates\default.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\templates\templates\images\template1.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\templates\templates\images\template2.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\templates\templates\images\template3.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\wsc\dialogs\wsc_ie.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\css\samples.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\img\github-top.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\img\header-bg.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\img\header-separator.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\img\logo.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\img\navigation-tip.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\index.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\js\sample.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\js\sf.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\old\ajax.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\old\api.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\old\appendto.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\old\assets\inlineall\logo.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\old\assets\outputxhtml\outputxhtml.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\old\assets\posteddata.php" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\old\assets\sample.jpg" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\old\assets\uilanguages\languages.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\old\datafiltering.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\old\dialog\assets\my_dialog.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\old\dialog\dialog.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\old\divreplace.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\old\enterkey\enterkey.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\old\htmlwriter\assets\outputforflash\outputforflash.swf" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\old\htmlwriter\assets\outputforflash\swfobject.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\old\htmlwriter\outputforflash.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\old\htmlwriter\outputhtml.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\old\index.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\old\inlineall.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\old\inlinebycode.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\old\inlinetextarea.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\old\jquery.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\old\magicline\magicline.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\old\readonly.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\old\replacebyclass.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\old\replacebycode.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\old\sample.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\old\sample.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\old\sample_posteddata.php" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\old\tabindex.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\old\toolbar\toolbar.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\old\uicolor.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\old\uilanguages.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\old\wysiwygarea\fullpage.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\old\xhtmlstyle.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\toolbarconfigurator\css\fontello.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\toolbarconfigurator\font\fontello.svg" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\toolbarconfigurator\font\LICENSE.txt" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\toolbarconfigurator\index.html" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\toolbarconfigurator\js\abstracttoolbarmodifier.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\toolbarconfigurator\js\fulltoolbareditor.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\toolbarconfigurator\js\toolbarmodifier.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\toolbarconfigurator\js\toolbartextmodifier.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\toolbarconfigurator\lib\codemirror\codemirror.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\toolbarconfigurator\lib\codemirror\codemirror.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\toolbarconfigurator\lib\codemirror\javascript.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\toolbarconfigurator\lib\codemirror\neo.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\toolbarconfigurator\lib\codemirror\show-hint.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\toolbarconfigurator\lib\codemirror\show-hint.js" />
+    <Content Include="Areas\Admin\Publics\ckeditor\skins\moono\dialog.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\skins\moono\dialog_ie.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\skins\moono\dialog_ie7.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\skins\moono\dialog_ie8.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\skins\moono\dialog_iequirks.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\skins\moono\editor.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\skins\moono\editor_gecko.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\skins\moono\editor_ie.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\skins\moono\editor_ie7.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\skins\moono\editor_ie8.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\skins\moono\editor_iequirks.css" />
+    <Content Include="Areas\Admin\Publics\ckeditor\skins\moono\icons.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\skins\moono\icons_hidpi.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\skins\moono\images\arrow.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\skins\moono\images\close.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\skins\moono\images\hidpi\close.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\skins\moono\images\hidpi\lock-open.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\skins\moono\images\hidpi\lock.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\skins\moono\images\hidpi\refresh.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\skins\moono\images\lock-open.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\skins\moono\images\lock.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\skins\moono\images\refresh.png" />
+    <Content Include="Areas\Admin\Publics\ckeditor\skins\moono\images\spinner.gif" />
+    <Content Include="Areas\Admin\Publics\ckeditor\styles.js" />
     <Content Include="Areas\Admin\Publics\JS\dashboard.js" />
     <Content Include="Areas\Admin\Publics\JS\jquery.js" />
+    <Content Include="Areas\Admin\Publics\JS\nicEdit.js" />
     <Content Include="Areas\Admin\Publics\Styles\Styles.css" />
+    <Content Include="CKEditor.NET.dll" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="Global.asax" />
     <Content Include="Models\b3752Db.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -142,21 +908,35 @@
       <DependentUpon>b3752Db.edmx</DependentUpon>
       <LastGenOutput>b3752Db.cs</LastGenOutput>
     </Content>
-    <Content Include="scripts\ai.0.15.0-build58334.js" />
-    <Content Include="scripts\ai.0.15.0-build58334.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Publics\Images\facebook.png" />
+    <Content Include="Publics\Images\linkedin.png" />
+    <Content Include="Publics\Images\twitter.png" />
+    <Content Include="Publics\Images\vm.jpg" />
+    <Content Include="Publics\Scripts\Facebook.js" />
+    <Content Include="Publics\Scripts\JQuery.js" />
+    <Content Include="Publics\Scripts\Scrollbar.js" />
+    <Content Include="Publics\Styles\Styles.css" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Code\IService.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\LogInController.cs" />
     <Compile Include="Areas\Admin\ViewModels\GuidViewModel.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\CurriculumVitaeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ReferencesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Admin.cs">
+    <Compile Include="Models\Admins.cs">
       <DependentUpon>b3752Db.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\b3752Db.Context.cs">
@@ -174,58 +954,59 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>b3752Db.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Blog.cs">
+    <Compile Include="Models\BlogEntry.cs" />
+    <Compile Include="Models\Blogs.cs">
       <DependentUpon>b3752Db.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\BlogsTag.cs">
+    <Compile Include="Models\BlogsTags.cs">
       <DependentUpon>b3752Db.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Client.cs">
+    <Compile Include="Models\Clients.cs">
       <DependentUpon>b3752Db.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CurriculumVitae.cs">
       <DependentUpon>b3752Db.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CurriculumVitaeContact.cs">
+    <Compile Include="Models\CurriculumVitaeContacts.cs">
       <DependentUpon>b3752Db.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CurriculumVitaeHobby.cs">
+    <Compile Include="Models\CurriculumVitaeHobbies.cs">
       <DependentUpon>b3752Db.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CurriculumVitaeLinguisticLanguage.cs">
+    <Compile Include="Models\CurriculumVitaeLinguisticLanguages.cs">
       <DependentUpon>b3752Db.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CurriculumVitaeOperatingSystem.cs">
+    <Compile Include="Models\CurriculumVitaeOperatingSystems.cs">
       <DependentUpon>b3752Db.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CurriculumVitaeProfessionalSkillsCircleDiagram.cs">
       <DependentUpon>b3752Db.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CurriculumVitaeProgrammingLanguage.cs">
+    <Compile Include="Models\CurriculumVitaeProgrammingLanguages.cs">
       <DependentUpon>b3752Db.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CurriculumVitaeQuality.cs">
+    <Compile Include="Models\CurriculumVitaeQualities.cs">
       <DependentUpon>b3752Db.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CurriculumVitaeScholarship.cs">
+    <Compile Include="Models\CurriculumVitaeScholarships.cs">
       <DependentUpon>b3752Db.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CurriculumVitaeSoftware.cs">
+    <Compile Include="Models\CurriculumVitaeSoftwares.cs">
       <DependentUpon>b3752Db.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CurriculumVitaeWorkExperience.cs">
+    <Compile Include="Models\CurriculumVitaeWorkExperiences.cs">
       <DependentUpon>b3752Db.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Home.cs">
       <DependentUpon>b3752Db.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Licence.cs">
+    <Compile Include="Models\Licences.cs">
       <DependentUpon>b3752Db.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Reference.cs">
+    <Compile Include="Models\References.cs">
       <DependentUpon>b3752Db.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Tag.cs">
+    <Compile Include="Models\Tags.cs">
       <DependentUpon>b3752Db.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -233,10 +1014,51 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
-    <Content Include="packages.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\LogIn\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Blog\Index.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\CurriculumVitae\Index.cshtml" />
+    <Content Include="Views\References\Index.cshtml" />
+    <Content Include="Areas\Admin\Publics\ckeditor\CHANGES.md" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\CHANGES.md" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\LICENSE.md" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\scayt\CHANGELOG.md" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\scayt\LICENSE.md" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\scayt\README.md" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\wsc\LICENSE.md" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\plugins\wsc\README.md" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\README.md" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\old\htmlwriter\assets\outputforflash\outputforflash.fla" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\toolbarconfigurator\font\config.json" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\toolbarconfigurator\font\fontello.eot" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\toolbarconfigurator\font\fontello.ttf" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\toolbarconfigurator\font\fontello.woff" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
+    <Content Include="Areas\Admin\Publics\ckeditor\ckeditor\skins\moono\readme.md" />
+    <Content Include="Areas\Admin\Publics\ckeditor\LICENSE.md" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\scayt\CHANGELOG.md" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\scayt\LICENSE.md" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\scayt\README.md" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\wsc\LICENSE.md" />
+    <Content Include="Areas\Admin\Publics\ckeditor\plugins\wsc\README.md" />
+    <Content Include="Areas\Admin\Publics\ckeditor\README.md" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\old\htmlwriter\assets\outputforflash\outputforflash.fla" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\toolbarconfigurator\font\config.json" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\toolbarconfigurator\font\fontello.eot" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\toolbarconfigurator\font\fontello.ttf" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\toolbarconfigurator\font\fontello.woff" />
+    <Content Include="Areas\Admin\Publics\ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
+    <Content Include="Areas\Admin\Publics\ckeditor\skins\moono\readme.md" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <EntityDeploy Include="Models\b3752Db.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>b3752Db.Designer.cs</LastGenOutput>
@@ -244,10 +1066,7 @@
     <Content Include="Models\b3752Db.edmx.diagram">
       <DependentUpon>b3752Db.edmx</DependentUpon>
     </Content>
-    <Content Include="Areas\Admin\Views\web.config" />
-    <Content Include="Areas\Admin\Views\LogIn\Index.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
+    <Content Include="Publics\PDF\Varga Máté Önéletrajz.pdf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -260,6 +1079,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

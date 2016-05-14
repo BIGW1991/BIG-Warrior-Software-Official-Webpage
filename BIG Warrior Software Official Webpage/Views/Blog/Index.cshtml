@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Blog - Varga Máté (BIG Warrior Software) Hivatalos Oldala</title>
+    <link rel="shortcut icon" href="~/Publics/Images/vm.jpg" />
+    <link rel="stylesheet"  href="~/Publics/Styles/Styles.css" type="text/css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Varga Máté (BIGWarriorSoftware) Szoftverfejlesztő és Web Programozó" />
+    <meta name="keywords" content="BIG,BIGWarriorSoftware,Portfólió Weboldal,Referenciák,Blog,Önéletrajz,Curriculum Vitae" />
+    <meta name="robots" content="index,follow" />
+    <meta name="googlebot" content="index,follow" />
+    <meta name="resource-type" content="document" />
+    <meta name="dc.language" content="hu">
+    <meta name="dc.source" content="http://bigwarriorsoftware.hu/">
+    <meta name="dc.title" content="Varga Máté (BIG Warrior Software) Hivatalos Oldala">
+    <meta name="dc.keywords" content="BIG,BIGWarriorSoftware,Portfólió Weboldal,Referenciák,Blog,Önéletrajz,Curriculum Vitae">
+    <meta name="dc.subject" content="Portfólió Weboldal">
+    <meta name="dc.description" content="Varga Máté Hivatalos portfólió weboldala, blogja, és referenciái">
+    <script type="text/javascript" src="~/Publics/Scripts/JQuery.js"></script>
+</head>
+<body class="body">
+    <header class="MainHeader">
+        <nav>
+            <ul>
+                <li>@Html.ActionLink("Kezdőlap", "", "Home")</li>
+                <li>@Html.ActionLink("Curriculum Vitae", "", "CurriculumVitae")</li>
+                <li>@Html.ActionLink("Kapcsolat", "", "Contact")</li>
+            </ul>
+        </nav>
+    </header>
+    <div class="MainContent" id="MainContent">
+        <div class="Content">
+            @Html.Raw(ViewData["BlogData"])
+            @Html.Raw(ViewData["Pagination"])
+        </div>
+    </div>
+    <footer class="MainFooter">
+        <p><a href="#">BIG Warrior Software</a> &copy; @DateTime.Now.Year</p>
+    </footer>
+
+    <script type="text/javascript" src="~/Publics/Scripts/Scrollbar.js"></script>
+</body>
+</html>

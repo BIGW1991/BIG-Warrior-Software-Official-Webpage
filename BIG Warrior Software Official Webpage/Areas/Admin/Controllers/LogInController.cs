@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Text;
-using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
-using System.Web;
 using System.Web.Mvc;
 using BIG_Warrior_Software_Official_Webpage.Securities;
 using BIG_Warrior_Software_Official_Webpage.Areas.Admin.ViewModels;
@@ -20,6 +16,8 @@ namespace BIG_Warrior_Software_Official_Webpage.Areas.Admin.Controllers
             return View();
         }
 
+        [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Run()
         {
             string username = Request.Form["usx"];
@@ -29,10 +27,11 @@ namespace BIG_Warrior_Software_Official_Webpage.Areas.Admin.Controllers
             {
                 using (b3752Entities db = new b3752Entities())
                 {
+                    db.Configuration.ProxyCreationEnabled = false;
                     Guid ID = (from admins in db.Admins
                                          where admins.Username == username
                                          select admins.ID).Single();
-                    Models.Admin admin = (from admins in db.Admins
+                    Models.Admins admin = (from admins in db.Admins
                                           where admins.ID == ID
                                           && admins.Password == password
                                           select admins).Single();

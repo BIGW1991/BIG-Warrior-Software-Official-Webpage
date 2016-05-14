@@ -1,88 +1,66 @@
 ﻿<!DOCTYPE HTML>
 <html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
-    <link rel="stylesheet" href="~/Areas/Admin/Publics/Styles/Styles.css"/>
-    <script src="~/Areas/Admin/Publics/JS/jquery.js" type="text/javascript"></script>
-    <script src="~/Areas/Admin/Publics/JS/dashboard.js" type="text/javascript"></script>
-    <title>Műszerfal</title>
-</head>
-<body>
-    <header class="MainHeader">
-        <div class="Logo"><a href="#">BIG W</a><span>arrior Software</span></div>
-    </header>
-    <a class="mobile" href="#">MENU</a>
-    <div class="MainContent">
-        <aside class="MainSidebar">
-            <nav>
-                <ul class="MainMenu">
-                    <li><a class="selected" href="#">Műszerfal</a></li><li><a href="CurriculumVitae">Önéletrajz szerkesztése</a></li><li><a href="Blog">Blog szerkesztése</a></li><li><a href="References">Referenciák szerkesztése</a></li>
-                </ul>
-            </nav>
-            <footer>
-                <p>Minden jog fenntartva &copy; @DateTime.Now.Year</p>
-            </footer>
-        </aside>
-        <div class="Content">
-            <h1>Műszerfal</h1>
-            <p>Here you can do stuffz!</p>
-            <div class="box">
-                <div class="box-top">
-                    <h2>News</h2>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+        <link rel="stylesheet" href="~/Areas/Admin/Publics/Styles/Styles.css"/>
+        <script src="~/Areas/Admin/Publics/JS/jquery.js" type="text/javascript"></script>
+        <script src="~/Areas/Admin/Publics/JS/dashboard.js" type="text/javascript"></script>
+        <title>Műszerfal</title>
+    </head>
+    <body>
+        <header class="MainHeader">
+            <div class="Logo"><a href="#">BIG W</a><span>arrior Software</span></div>
+        </header>
+        <a class="mobile" href="#">MENU</a>
+        <div class="MainContent">
+            <aside class="MainSidebar">
+                <nav>
+                    <ul class="MainMenu">
+                        <li><a class="selected" href="#">Műszerfal</a></li><li><a href="Home">Kezdőlap szerkesztése</a></li><li><a href="CurriculumVitae">Önéletrajz szerkesztése</a></li><li><a href="Blog">Blog szerkesztése</a></li><li><a href="References">Referenciák szerkesztése</a></li>
+                    </ul>
+                </nav>
+                <footer>
+                    <p>Minden jog fenntartva &copy; @DateTime.Now.Year</p>
+                </footer>
+            </aside>
+            <div class="Content">
+                <h1>Műszerfal</h1>
+                <p>Here you can do stuffz!</p>
+                <div class="box">
+                    <div class="box-top">
+                        <h2>Látogatások</h2>
+                    </div>
+                    <div class="box-panel">
+                        <h1>@ViewData["VisitedCount"]</h1>
+                    </div>
                 </div>
-                <div class="box-panel">
-                    <p>lalaala</p>
+                <div class="box">
+                    <div class="box-top">
+                        <h2>Önéletrajz letöltése</h2>
+                    </div>
+                    <div class="box-panel">
+                        <h1>@ViewData["CVDownloadedCount"]</h1>
+                    </div>
                 </div>
-            </div>
-            <div class="box">
-                <div class="box-top">
-                    <h2>News</h2>
+                <div class="box">
+                    <div class="box-top">
+                        <h2>Blog olvasások</h2>
+                    </div>
+                    <div class="box-panel">
+                        <p>@ViewData["BlogReadingCount"]</p>
+                    </div>
                 </div>
-                <div class="box-panel">
-                    <p>lalaala</p>
-                </div>
-            </div>
-            <div class="box">
-                <div class="box-top">
-                    <h2>News</h2>
-                </div>
-                <div class="box-panel">
-                    <p>lalaala</p>
-                </div>
-            </div>
-            <div class="box">
-                <div class="box-top">
-                    <h2>News</h2>
-                </div>
-                <div class="box-panel">
-                    <p>lalaala</p>
-                </div>
-            </div>
-            <div class="box">
-                <div class="box-top">
-                    <h2>News</h2>
-                </div>
-                <div class="box-panel">
-                    <p>lalaala</p>
-                </div>
-            </div>
-            <div class="box">
-                <div class="box-top">
-                    <h2>News</h2>
-                </div>
-                <div class="box-panel">
-                    <p>lalaala</p>
-                </div>
-            </div>
-            <div class="box">
-                <div class="box-top">
-                    <h2>News</h2>
-                </div>
-                <div class="box-panel">
-                    <p>lalaala</p>
+                <div class="box">
+                    <div class="box-top">
+                        <h2>Blog hozzászólások</h2>
+                    </div>
+                    <div class="box-panel">
+                        <p></p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</body>
+    </body>
 </html>
