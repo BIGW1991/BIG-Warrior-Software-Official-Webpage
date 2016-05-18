@@ -1,1296 +1,203 @@
-﻿@media screen and (min-width:1336px) {
-    html, body {
-        margin: 0 auto;
-        clear: both;
-        background: #203747;
-        color: #fff;
-        font-size: 87.5%;
-        font-family: Arial,'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        line-height: 1.5;
-        text-align: left;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-    }
-
-    a {
-        text-decoration: none;
-    }
-
-        a:link, a:visited {
-            color: #fff;
-        }
-
-        a:hover, a:active {
-        }
-
-    .MainHeader nav {
-        display: block;
-        width: 100%;
-        height: 40px;
-        background-color: #f14949;
-    }
-
-        .MainHeader nav ul {
-            padding: 6px;
-            margin: 0 auto;
-            list-style-type: none;
-        }
-
-            .MainHeader nav ul li {
-                float: left;
-                display: inline;
-            }
-
-        .MainHeader nav a:link, .MainHeader nav a:visited {
-            color: #fff;
-            display: inline-block;
-            padding: 5px 20px;
-        }
-
-        .MainHeader nav a:hover, .MainHeader nav a:active,
-        .MainHeader nav .active a:link, .MainHeader nav .active a:visited {
-            background-color: #203747;
-            text-shadow: none;
-        }
-
-        .MainHeader nav ul li a {
-            border-radius: 25px;
-        }
-
-    .MainContent {
-        margin:0 auto;
-        display: block;
-        height: 86%;
-        width:100%;
-        line-height: 25px;
-    }
-
-    .Content {
-        width: 100%;
-        height:100%;
-        float: left;
-        overflow:hidden;
-        overflow-y: scroll;
-    }
-
-    #Introduction {
-        position: absolute;
-        left: 40%;
-        top: 30%;
-        width: 80%;
-        height: 100px;
-        line-height: 22px;
-    }
-
-        #Introduction h1 {
-            font-weight: normal;
-            font-size: 32px;
-            color: #69c36c;
-        }
-
-        #Introduction #Profile {
-            float: left;
-            width: 200px;
-            border-radius: 100px;
-            -webkit-border-radius: 100px;
-            -moz-border-radius: 100px;
-        }
-
-        #Introduction aside {
-            float: left;
-            margin-left: 20px;
-        }
-
-        #Introduction .Link-Image {
-            width: 32px;
-        }
-
-    .TopContent-Blog {
-        padding: 3% 5%;
-        margin-top: 2%;
-    }
-
-    .TopContent-CV {
-        margin:0 auto;
-        width:70%;
-        height: 29.7cm; /* change the margins as you want them to be. */
-        display:inline-block;
-    }
-
-        .TopContent-CV object {
-            width: 21cm;
-            height: 29.7cm;
-            display: inline-block;
-        }
-
-    #DownloadLink {
-        
-        display: inline-block;
-        padding: 15px 60px;
-        -moz-border-radius: 30px;
-        -webkit-border-radius: 30px;
-        -moz-border-radius: 30px;
-        background: #69c36c;
-    }
-
-    .TopContent-Contact {
-        margin: 0 auto;
-        width: 40%;
-        padding: 60px 30px;
-        border: 1px solid #e1e1e1;
-        background: #c9d0de;
-        box-shadow: 0px 0px 8px #444;
-        -webkit-box-shadow: 0px 0px 8px #444;
-        -moz-box-shadow: 0px 0px 8px #444;
-    }
-
-        .TopContent-Contact h1 {
-            font-size: 35px;
-            color: #445668;
-            text-transform: uppercase;
-            text-align: center;
-            margin: 0px 0px 35px 0;
-            text-shadow: 0px 1px 0px #f2f2f2;
-        }
-
-        .TopContent-Contact label {
-            float: left;
-            clear: left;
-            margin: 11px 20px 0 0;
-            text-align: right;
-            font-size: 16px;
-            color: #445668;
-            text-transform: uppercase;
-            text-shadow: 0px 1px 0px #f2f2f2;
-        }
-
-        .TopContent-Contact input[type=text] {
-            display: inline-block;
-            width: 80%;
-            height: 35px;
-            padding: 5px 20px 0px 20px;
-            margin: 0 0 20px 0;
-            background: #5E768D;
-            border: 0;
-            background: -moz-linear-gradient(top, #546A7F, 0%, #5E768D 20%);
-            background: -webkit-linear-gradient(linear,left top,left bottom,color-stop(0%, #546A7F),color-stop(20%, #5E768D));
-        }
-
-            .TopContent-Contact input[type=text]::-webkit-input-placeholder {
-                color: #a1b2c3;
-                text-shadow: 0px -1px 0px #38506B;
-            }
-
-            .TopContent-Contact input[type=text]::-moz-placeholder {
-                color: #a1b2c3;
-                text-shadow: 0px -1px 0px #38506B;
-            }
-
-        .TopContent-Contact input[type=text] {
-            color: #a1b2c3;
-            text-shadow: 0px -1px 0px #38506B;
-        }
-
-        .TopContent-Contact textarea {
-            width: 80%;
-            height: 170px;
-            padding: 12px 20px 0px 20px;
-            margin: 0 0 20px 0;
-            background: #5E768D;
-        }
-
-        .TopContent-Contact button {
-            background: #69c36c;
-            border: 0;
-            color: white;
-            padding: 20px 25px;
-            cursor: pointer;
-        }
-
-    .Pagination {
-        width: 50%;
-        height: 10px;
-        border: 1.5px solid #38ADFF;
-        padding: 3% 5%;
-        margin-top: 2%;
-    }
-
-    .Top-Sidebar {
-        width: 27%;
-        float: left;
-    }
-
-    .Middle-Sidebar {
-        width: 27%;
-        float: left;
-    }
-
-    .Bottom-Sidebar {
-        width: 27%;
-        float: left;
-    }
-
-    .MainFooter {
-        position: relative;
-        bottom: 0;
-        width: 100%;
-        padding: 5px 20px;
-        background: #36546c;
-    }
-
-    #MainContent overflow::-webkit-scrollbar:vertical {
-        width: 16px;
-    }
-
-    -scrollbar:vertical {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        width: 350px;
-        height: 6px;
-        border-radius: 2px;
-        -webkit-border-radius: 2px;
-        -moz-border-radius: 2px;
-        border: 1px solid #666;
-    }
+﻿html, body {
+    position: relative;
+    top: 0;
+    margin: 0 auto;
+    clear: both;
+    width: 100%;
+    height: 100%;
 }
 
-@media only screen and (max-width:480px) {
-    html, body {
-        margin: 0;
-        clear: both;
-        background: #203747;
-        color: #fff;
-        font-size: 100%;
-        font-family: Arial,'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        line-height: 1.5;
-        text-align: left;
+.body {
+    background: #203747;
+    color: #fff;
+    font-size: 87.5%;
+    font-family: Arial,'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    line-height: 1.5;
+    text-align: left;
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+a:link, a:visited {
+    color: #fff;
+}
+
+a:hover, a:active {
+    color: #fff;
+}
+
+.MainHeader {
+    position: relative;
+    top: 0;
+    margin: 0;
+}
+
+.MainHeader nav {
+    position: relative;
+    top: 0;
+    display: table;
+    background: #f14949;
+    color: #fff;
+    width: 100%;
+    height: 40px;
+}
+
+.MainHeader nav ul {
+    list-style-type: none;
+    margin: 0 auto;
+}
+
+.MainHeader nav ul li {
+    float: left;
+    display: block;
+    margin: 6px;
+}
+
+.MainHeader nav a:link, .MainHeader nav a:visited {
+    color: #FFF;
+    display: block;
+    padding: 5px 20px;
+    height: 20px;
+}
+
+.MainHeader nav a:hover, .MainHeader nav a.Active,
+.MainHeader nav .Active a:link, .MainHeader nav .Active a:visited {
+    background: #203747;
+    text-shadow: none;
+}
+
+.MainHeader nav ul li a {
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.MainContent {
+    display: block;
+    margin: 0;
+    line-height: 25px;
+    overflow: hidden;
+    height: 86%;
+    width: 100%;
+}
+
+.Content {
+    display: block;
+    margin: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+.TopContent {
+    width: 70%;
+    margin: 2% 0;
+    padding: 3% 5%;
+}
+
+.TopContent .Link-Image {
+    width:5%;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -o-border-radius: 0px;
+}
+
+.TopContent img {
+    float: left;
+    width: 20%;
+    height: auto;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.TopContent aside {
+    width:70%;
+    float: left;
+}
+.TopContent aside h1{
+    color:#5fbb66;
+}
+.Post-Info {
+    font-style: italic;
+    color: #f0f0f0;
+    font-size: 85%;
+}
+
+.MainFooter {
+    position: fixed;
+    bottom:0;
+    width:100%;
+    height: 40px;
+    color: #fff;
+    background: #36546C;
+    padding:5px;
+}
+
+.MainFooter p {
+    width: 92%;
+}
+
+@media only screen and (min-width:150px) and (max-width:600px) {
+    .body {
+        font-size: 95%;
+    }
+
+    .TopContent img {
+        float: left;
         width: 100%;
-        height: 100%;
-        overflow-y: scroll;
+        height: auto;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -o-border-radius: 50%;
+    }
+
+    .MainHeader {
+        position: relative;
+        top: 0;
+        margin: 0;
+    }
+
+    .MainHeader nav {
+        height: 100px;
+    }
+
+    .MainHeader nav ul {
+        padding-left: 0;
+    }
+
+    .MainHeader nav ul li {
+        margin: 0 auto;
+        width: 100%;
+        text-align: center;
+    }
+
+    .MainHeader nav a:link, .MainHeader nav a:visited {
+        padding: 5px 20px;
+        height: 20px;
+        display: block;
+    }
+
+
+    .Content {
+        display: block;
+        margin: 0;
+        overflow-y: auto;
         overflow-x: hidden;
+        height: 90%;
     }
 
-    a {
-        text-decoration: none;
-    }
-
-        a:link, a:visited {
-            color: #fff;
-        }
-
-        a:hover, a:active {
-        }
-
-    .MainHeader nav {
-        display: block;
+    .TopContent {
         width: 100%;
-        height: 100px;
-        background-color: #f14949;
-    }
-
-        .MainHeader nav ul {
-            padding: 6px;
-            margin: 0 auto;
-            list-style-type: none;
-            text-align:center;
-        }
-
-            .MainHeader nav ul li {
-                margin-top:5px;
-                margin-bottom:5px;
-                width:100%;
-            }
-
-        .MainHeader nav a:link, .MainHeader nav a:visited {
-            color: #fff;
-            padding: 5px 20px;
-        }
-
-        .MainHeader nav a:hover, .MainHeader nav a:active,
-        .MainHeader nav .active a:link, .MainHeader nav .active a:visited {
-            background-color: #203747;
-            text-shadow: none;
-        }
-
-        .MainHeader nav ul li a {
-            width:100%;
-            border-radius: 25px;
-            -webkit-border-radius: 25px;
-            -moz-border-radius: 25px;
-        }
-
-    .MainContent {
-        position: relative;
-        top: 0;
-        display: block;
-        height: 100%;
-        line-height: 25px;
-        overflow:hidden;
-    }
-
-    .Content {
-        width: 100%;
-    }
-
-    #Introduction {
-        display:block;
-        margin:2% auto;
-        width:65%;
-        line-height: 22px;
-    }
-
-        #Introduction h1 {
-            margin-left:-10px;
-            font-weight: normal;
-            font-size: 32px;
-            color: #69c36c;
-        }
-
-        #Introduction #Profile {
-            float: left;
-            width: 200px;
-            border-radius: 100px;
-            -webkit-border-radius: 100px;
-            -moz-border-radius: 100px;
-        }
-
-        #Introduction aside {
-            float: left;
-            margin-left: 20px;
-        }
-
-        #Introduction .Link-Image {
-            width: 32px;
-        }
-        #Introduction aside p.IntroText{
-            text-align:center;
-        }
-    .TopContent-Blog {
-        padding: 3% 5%;
-        margin-top: 2%;
-    }
-
-    .TopContent-CV {
-        width: 100%;
-        height: 100%;
-        display:inline-block;
-    }
-
-        .TopContent-CV object {
-            width: 100%;
-            height:400px;
-        }
-
-    #DownloadLink {
-        
-        display: inline-block;
-        padding: 15px 60px;
-        -moz-border-radius: 30px;
-        -webkit-border-radius: 30px;
-        -moz-border-radius: 30px;
-        background: #69c36c;
-    }
-
-    .TopContent-Contact {
-        margin: 0 auto;
-        width: 100%;
-        padding: 10px 10px;
-        border: 1px solid #e1e1e1;
-        background: #c9d0de;
-        box-shadow: 0px 0px 8px #444;
-        -webkit-box-shadow: 0px 0px 8px #444;
-        -moz-box-shadow: 0px 0px 8px #444;
-    }
-
-        .TopContent-Contact h1 {
-            color: #445668;
-            text-transform: uppercase;
-            text-align: center;
-            margin: 0px 0px 35px 0;
-            text-shadow: 0px 1px 0px #f2f2f2;
-        }
-
-        .TopContent-Contact label {
-            float: left;
-            clear: left;
-            margin: 11px 20px 0 0;
-            text-align: right;
-            font-size: 16px;
-            color: #445668;
-            text-transform: uppercase;
-            text-shadow: 0px 1px 0px #f2f2f2;
-        }
-
-        .TopContent-Contact input[type=text] {
-            display: inline-block;
-            width: 85%;
-            height: 23px;
-            margin:0;
-            background: #5E768D;
-            border: 0;
-            background: -moz-linear-gradient(top, #546A7F, 0%, #5E768D 20%);
-            background: -webkit-linear-gradient(linear,left top,left bottom,color-stop(0%, #546A7F),color-stop(20%, #5E768D));
-        }
-
-            .TopContent-Contact input[type=text]::-webkit-input-placeholder {
-                color: #a1b2c3;
-                text-shadow: 0px -1px 0px #38506B;
-            }
-
-            .TopContent-Contact input[type=text]::-moz-placeholder {
-                color: #a1b2c3;
-                text-shadow: 0px -1px 0px #38506B;
-            }
-
-        .TopContent-Contact input[type=text] {
-            color: #a1b2c3;
-            text-shadow: 0px -1px 0px #38506B;
-        }
-
-        .TopContent-Contact textarea {
-            width: 80%;
-            height: 170px;
-            padding: 12px 20px 0px 20px;
-            margin: 0 0 20px 0;
-            background: #5E768D;
-        }
-
-        .TopContent-Contact button {
-            background: #69c36c;
-            border: 0;
-            color: white;
-            padding: 20px 25px;
-            cursor: pointer;
-        }
-
-    .Pagination {
-        width: 50%;
-        height: 10px;
-        border: 1.5px solid #38ADFF;
-        padding: 3% 5%;
-        margin-top: 2%;
-    }
-
-    .Top-Sidebar {
-        width: 27%;
-        float: left;
-    }
-
-    .Middle-Sidebar {
-        width: 27%;
-        float: left;
-    }
-
-    .Bottom-Sidebar {
-        width: 27%;
-        float: left;
-    }
-
-    .MainFooter {
-        position: relative;
-        bottom: 0;
-        width: 100%;
-        padding: 5px 20px;
-        background: #36546c;
-    }
-
-    #MainContent overflow::-webkit-scrollbar:vertical {
-        width: 16px;
-    }
-
-    -scrollbar:vertical {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        width: 350px;
-        height: 6px;
-        border-radius: 2px;
-        -webkit-border-radius: 2px;
-        -moz-border-radius: 2px;
-        border: 1px solid #666;
-    }
-}
-
-@media only screen and (min-width:768px) and (max-width:1335px) {
-    html, body {
         margin: 0;
-        clear: both;
-        background: #203747;
-        color: #fff;
-        font-size: 87.5%;
-        font-family: Arial,'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        line-height: 1.5;
-        text-align: left;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-    }
-
-    a {
-        text-decoration: none;
-    }
-
-        a:link, a:visited {
-            color: #fff;
-        }
-
-        a:hover, a:active {
-        }
-
-    .MainHeader nav {
-        display: block;
-        width: 100%;
-        height: 40px;
-        background-color: #f14949;
-    }
-
-        .MainHeader nav ul {
-            padding: 6px;
-            margin: 0 auto;
-            list-style-type: none;
-        }
-
-            .MainHeader nav ul li {
-                float: left;
-                display: inline;
-            }
-
-        .MainHeader nav a:link, .MainHeader nav a:visited {
-            color: #fff;
-            display: inline-block;
-            padding: 5px 20px;
-        }
-
-        .MainHeader nav a:hover, .MainHeader nav a:active,
-        .MainHeader nav .active a:link, .MainHeader nav .active a:visited {
-            background-color: #203747;
-            text-shadow: none;
-        }
-
-        .MainHeader nav ul li a {
-            border-radius: 25px;
-        }
-
-    .MainContent {
-        position: relative;
-        top: 0;
-        display: block;
-        height: 86%;
-        line-height: 25px;
-        overflow: hidden;
-    }
-
-    .Content {
-        width: 70%;
-        float: left;
-    }
-
-    #Introduction {
-        position: absolute;
-        left: 40%;
-        top: 30%;
-        width: 80%;
-        height: 100px;
-        line-height: 22px;
-    }
-
-        #Introduction h1 {
-            font-weight: normal;
-            font-size: 32px;
-            color: #69c36c;
-        }
-
-        #Introduction #Profile {
-            float: left;
-            width: 200px;
-            border-radius: 100px;
-            -webkit-border-radius: 100px;
-            -moz-border-radius: 100px;
-        }
-
-        #Introduction aside {
-            float: left;
-            margin-left: 20px;
-        }
-
-        #Introduction .Link-Image {
-            width: 32px;
-        }
-
-    .TopContent-Blog {
-        padding: 3% 5%;
-        margin-top: 2%;
-    }
-
-    .TopContent-CV {
-        width: 21cm;
-        height: 29.7cm;
-        margin: 25mm; /* change the margins as you want them to be. */
-        display:inline-block;
-    }
-
-        .TopContent-CV object {
-            width: 21cm;
-            height: 29.7cm;
-            display: inline-block;
-        }
-
-    #DownloadLink {
-        
-        display: inline-block;
-        padding: 15px 60px;
-        -moz-border-radius: 30px;
-        -webkit-border-radius: 30px;
-        -moz-border-radius: 30px;
-        background: #69c36c;
-    }
-
-    .TopContent-Contact {
-        margin: 0 auto;
-        width: 40%;
-        padding: 60px 30px;
-        border: 1px solid #e1e1e1;
-        background: #c9d0de;
-        box-shadow: 0px 0px 8px #444;
-        -webkit-box-shadow: 0px 0px 8px #444;
-        -moz-box-shadow: 0px 0px 8px #444;
-    }
-
-        .TopContent-Contact h1 {
-            font-size: 35px;
-            color: #445668;
-            text-transform: uppercase;
-            text-align: center;
-            margin: 0px 0px 35px 0;
-            text-shadow: 0px 1px 0px #f2f2f2;
-        }
-
-        .TopContent-Contact label {
-            float: left;
-            clear: left;
-            margin: 11px 20px 0 0;
-            text-align: right;
-            font-size: 16px;
-            color: #445668;
-            text-transform: uppercase;
-            text-shadow: 0px 1px 0px #f2f2f2;
-        }
-
-        .TopContent-Contact input[type=text] {
-            display: inline-block;
-            width: 80%;
-            height: 35px;
-            padding: 5px 20px 0px 20px;
-            margin: 0 0 20px 0;
-            background: #5E768D;
-            border: 0;
-            background: -moz-linear-gradient(top, #546A7F, 0%, #5E768D 20%);
-            background: -webkit-linear-gradient(linear,left top,left bottom,color-stop(0%, #546A7F),color-stop(20%, #5E768D));
-        }
-
-            .TopContent-Contact input[type=text]::-webkit-input-placeholder {
-                color: #a1b2c3;
-                text-shadow: 0px -1px 0px #38506B;
-            }
-
-            .TopContent-Contact input[type=text]::-moz-placeholder {
-                color: #a1b2c3;
-                text-shadow: 0px -1px 0px #38506B;
-            }
-
-        .TopContent-Contact input[type=text] {
-            color: #a1b2c3;
-            text-shadow: 0px -1px 0px #38506B;
-        }
-
-        .TopContent-Contact textarea {
-            width: 80%;
-            height: 170px;
-            padding: 12px 20px 0px 20px;
-            margin: 0 0 20px 0;
-            background: #5E768D;
-        }
-
-        .TopContent-Contact button {
-            background: #69c36c;
-            border: 0;
-            color: white;
-            padding: 20px 25px;
-            cursor: pointer;
-        }
-
-    .Pagination {
-        width: 50%;
-        height: 10px;
-        border: 1.5px solid #38ADFF;
-        padding: 3% 5%;
-        margin-top: 2%;
-    }
-
-    .Top-Sidebar {
-        width: 27%;
-        float: left;
-    }
-
-    .Middle-Sidebar {
-        width: 27%;
-        float: left;
-    }
-
-    .Bottom-Sidebar {
-        width: 27%;
-        float: left;
-    }
-
-    .MainFooter {
-        position: relative;
-        bottom: 0;
-        width: 100%;
-        padding: 5px 20px;
-        background: #36546c;
-    }
-
-    #MainContent overflow::-webkit-scrollbar:vertical {
-        width: 16px;
-    }
-
-    -scrollbar:vertical {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        width: 350px;
-        height: 6px;
-        border-radius: 2px;
-        -webkit-border-radius: 2px;
-        -moz-border-radius: 2px;
-        border: 1px solid #666;
+        padding:0;
     }
 }
-/* different techniques for iPad screening */
-@media only screen and (min-width: 481px) and (max-width: 1024px) and (orientation:portrait) {
-    html, body {
-        margin: 0;
-        clear: both;
-        background: #203747;
-        color: #fff;
-        font-size: 87.5%;
-        font-family: Arial,'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        line-height: 1.5;
-        text-align: left;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-    }
-
-    a {
-        text-decoration: none;
-    }
-
-        a:link, a:visited {
-            color: #fff;
-        }
-
-        a:hover, a:active {
-        }
-
-    .MainHeader nav {
-        display: block;
-        width: 100%;
-        height: 160px;
-        background-color: #f14949;
-    }
-
-        .MainHeader nav ul {
-            padding: 6px;
-            margin: 0 auto;
-            list-style-type: none;
-        }
-
-            .MainHeader nav ul li {
-                float: left;
-                display: inline;
-            }
-
-        .MainHeader nav a:link, .MainHeader nav a:visited {
-            color: #fff;
-            display: inline-block;
-            padding: 5px 20px;
-        }
-
-        .MainHeader nav a:hover, .MainHeader nav a:active,
-        .MainHeader nav .active a:link, .MainHeader nav .active a:visited {
-            background-color: #203747;
-            text-shadow: none;
-        }
-
-        .MainHeader nav ul li a {
-            border-radius: 25px;
-        }
-
-    .MainContent {
-        position: relative;
-        top: 0;
-        display: block;
-        height: 86%;
-        line-height: 25px;
-        overflow: hidden;
-    }
-
-    .Content {
-        width: 70%;
-        float: left;
-    }
-
-    #Introduction {
-        position: absolute;
-        left: 40%;
-        top: 30%;
-        width: 80%;
-        height: 100px;
-        line-height: 22px;
-    }
-
-        #Introduction h1 {
-            font-weight: normal;
-            font-size: 32px;
-            color: #69c36c;
-        }
-
-        #Introduction #Profile {
-            float: left;
-            width: 200px;
-            border-radius: 100px;
-            -webkit-border-radius: 100px;
-            -moz-border-radius: 100px;
-        }
-
-        #Introduction aside {
-            float: left;
-            margin-left: 20px;
-        }
-
-        #Introduction .Link-Image {
-            width: 32px;
-        }
-
-    .TopContent-Blog {
-        padding: 3% 5%;
-        margin-top: 2%;
-    }
-
-    .TopContent-CV {
-        width: 21cm;
-        height: 29.7cm;
-        margin: 25mm; /* change the margins as you want them to be. */
-        display:inline-block;
-    }
-
-        .TopContent-CV object {
-            width: 21cm;
-            height: 29.7cm;
-            display: inline-block;
-        }
-
-    #DownloadLink {
-        
-        display: inline-block;
-        padding: 15px 60px;
-        -moz-border-radius: 30px;
-        -webkit-border-radius: 30px;
-        -moz-border-radius: 30px;
-        background: #69c36c;
-    }
-
-    .TopContent-Contact {
-        margin: 0 auto;
-        width: 40%;
-        padding: 60px 30px;
-        border: 1px solid #e1e1e1;
-        background: #c9d0de;
-        box-shadow: 0px 0px 8px #444;
-        -webkit-box-shadow: 0px 0px 8px #444;
-        -moz-box-shadow: 0px 0px 8px #444;
-    }
-
-        .TopContent-Contact h1 {
-            font-size: 35px;
-            color: #445668;
-            text-transform: uppercase;
-            text-align: center;
-            margin: 0px 0px 35px 0;
-            text-shadow: 0px 1px 0px #f2f2f2;
-        }
-
-        .TopContent-Contact label {
-            float: left;
-            clear: left;
-            margin: 11px 20px 0 0;
-            text-align: right;
-            font-size: 16px;
-            color: #445668;
-            text-transform: uppercase;
-            text-shadow: 0px 1px 0px #f2f2f2;
-        }
-
-        .TopContent-Contact input[type=text] {
-            display: inline-block;
-            width: 80%;
-            height: 35px;
-            padding: 5px 20px 0px 20px;
-            margin: 0 0 20px 0;
-            background: #5E768D;
-            border: 0;
-            background: -moz-linear-gradient(top, #546A7F, 0%, #5E768D 20%);
-            background: -webkit-linear-gradient(linear,left top,left bottom,color-stop(0%, #546A7F),color-stop(20%, #5E768D));
-        }
-
-            .TopContent-Contact input[type=text]::-webkit-input-placeholder {
-                color: #a1b2c3;
-                text-shadow: 0px -1px 0px #38506B;
-            }
-
-            .TopContent-Contact input[type=text]::-moz-placeholder {
-                color: #a1b2c3;
-                text-shadow: 0px -1px 0px #38506B;
-            }
-
-        .TopContent-Contact input[type=text] {
-            color: #a1b2c3;
-            text-shadow: 0px -1px 0px #38506B;
-        }
-
-        .TopContent-Contact textarea {
-            width: 80%;
-            height: 170px;
-            padding: 12px 20px 0px 20px;
-            margin: 0 0 20px 0;
-            background: #5E768D;
-        }
-
-        .TopContent-Contact button {
-            background: #69c36c;
-            border: 0;
-            color: white;
-            padding: 20px 25px;
-            cursor: pointer;
-        }
-
-    .Pagination {
-        width: 50%;
-        height: 10px;
-        border: 1.5px solid #38ADFF;
-        padding: 3% 5%;
-        margin-top: 2%;
-    }
-
-    .Top-Sidebar {
-        width: 27%;
-        float: left;
-    }
-
-    .Middle-Sidebar {
-        width: 27%;
-        float: left;
-    }
-
-    .Bottom-Sidebar {
-        width: 27%;
-        float: left;
-    }
-
-    .MainFooter {
-        position: relative;
-        bottom: 0;
-        width: 100%;
-        padding: 5px 20px;
-        background: #36546c;
-    }
-
-    #MainContent overflow::-webkit-scrollbar:vertical {
-        width: 16px;
-    }
-
-    -scrollbar:vertical {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        width: 350px;
-        height: 6px;
-        border-radius: 2px;
-        -webkit-border-radius: 2px;
-        -moz-border-radius: 2px;
-        border: 1px solid #666;
-    }
-}
-
-@media only screen and (min-width: 481px) and (max-width: 1024px) and (orientation:landscape) {
-    html, body {
-        margin: 0;
-        clear: both;
-        background: #203747;
-        color: #fff;
-        font-size: 87.5%;
-        font-family: Arial,'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        line-height: 1.5;
-        text-align: left;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-    }
-
-    a {
-        text-decoration: none;
-    }
-
-        a:link, a:visited {
-            color: #fff;
-        }
-
-        a:hover, a:active {
-        }
-
-    .MainHeader nav {
-        display: block;
-        width: 100%;
-        height: 40px;
-        background-color: #f14949;
-    }
-
-        .MainHeader nav ul {
-            padding: 6px;
-            margin: 0 auto;
-            list-style-type: none;
-        }
-
-            .MainHeader nav ul li {
-                float: left;
-                display: inline;
-            }
-
-        .MainHeader nav a:link, .MainHeader nav a:visited {
-            color: #fff;
-            display: inline-block;
-            padding: 5px 20px;
-        }
-
-        .MainHeader nav a:hover, .MainHeader nav a:active,
-        .MainHeader nav .active a:link, .MainHeader nav .active a:visited {
-            background-color: #203747;
-            text-shadow: none;
-        }
-
-        .MainHeader nav ul li a {
-            border-radius: 25px;
-        }
-
-    .MainContent {
-        position: relative;
-        top: 0;
-        display: block;
-        height: 86%;
-        line-height: 25px;
-        overflow: hidden;
-    }
-
-    .Content {
-        width: 70%;
-        float: left;
-    }
-
-    #Introduction {
-        position: absolute;
-        left: 40%;
-        top: 30%;
-        width: 80%;
-        height: 100px;
-        line-height: 22px;
-    }
-
-        #Introduction h1 {
-            font-weight: normal;
-            font-size: 32px;
-            color: #69c36c;
-        }
-
-        #Introduction #Profile {
-            float: left;
-            width: 200px;
-            border-radius: 100px;
-            -webkit-border-radius: 100px;
-            -moz-border-radius: 100px;
-        }
-
-        #Introduction aside {
-            float: left;
-            margin-left: 20px;
-        }
-
-        #Introduction .Link-Image {
-            width: 32px;
-        }
-
-    .TopContent-Blog {
-        padding: 3% 5%;
-        margin-top: 2%;
-    }
-
-    .TopContent-CV {
-        width: 21cm;
-        height: 29.7cm;
-        margin: 25mm; /* change the margins as you want them to be. */
-        display:inline-block;
-    }
-
-        .TopContent-CV object {
-            width: 21cm;
-            height: 29.7cm;
-            display: inline-block;
-        }
-
-    #DownloadLink {
-        
-        display: inline-block;
-        padding: 15px 60px;
-        -moz-border-radius: 30px;
-        -webkit-border-radius: 30px;
-        -moz-border-radius: 30px;
-        background: #69c36c;
-    }
-
-    .TopContent-Contact {
-        margin: 0 auto;
-        width: 40%;
-        padding: 60px 30px;
-        border: 1px solid #e1e1e1;
-        background: #c9d0de;
-        box-shadow: 0px 0px 8px #444;
-        -webkit-box-shadow: 0px 0px 8px #444;
-        -moz-box-shadow: 0px 0px 8px #444;
-    }
-
-        .TopContent-Contact h1 {
-            font-size: 35px;
-            color: #445668;
-            text-transform: uppercase;
-            text-align: center;
-            margin: 0px 0px 35px 0;
-            text-shadow: 0px 1px 0px #f2f2f2;
-        }
-
-        .TopContent-Contact label {
-            float: left;
-            clear: left;
-            margin: 11px 20px 0 0;
-            text-align: right;
-            font-size: 16px;
-            color: #445668;
-            text-transform: uppercase;
-            text-shadow: 0px 1px 0px #f2f2f2;
-        }
-
-        .TopContent-Contact input[type=text] {
-            display: inline-block;
-            width: 80%;
-            height: 35px;
-            padding: 5px 20px 0px 20px;
-            margin: 0 0 20px 0;
-            background: #5E768D;
-            border: 0;
-            background: -moz-linear-gradient(top, #546A7F, 0%, #5E768D 20%);
-            background: -webkit-linear-gradient(linear,left top,left bottom,color-stop(0%, #546A7F),color-stop(20%, #5E768D));
-        }
-
-            .TopContent-Contact input[type=text]::-webkit-input-placeholder {
-                color: #a1b2c3;
-                text-shadow: 0px -1px 0px #38506B;
-            }
-
-            .TopContent-Contact input[type=text]::-moz-placeholder {
-                color: #a1b2c3;
-                text-shadow: 0px -1px 0px #38506B;
-            }
-
-        .TopContent-Contact input[type=text] {
-            color: #a1b2c3;
-            text-shadow: 0px -1px 0px #38506B;
-        }
-
-        .TopContent-Contact textarea {
-            width: 80%;
-            height: 170px;
-            padding: 12px 20px 0px 20px;
-            margin: 0 0 20px 0;
-            background: #5E768D;
-        }
-
-        .TopContent-Contact button {
-            background: #69c36c;
-            border: 0;
-            color: white;
-            padding: 20px 25px;
-            cursor: pointer;
-        }
-
-    .Pagination {
-        width: 50%;
-        height: 10px;
-        border: 1.5px solid #38ADFF;
-        padding: 3% 5%;
-        margin-top: 2%;
-    }
-
-    .Top-Sidebar {
-        width: 27%;
-        float: left;
-    }
-
-    .Middle-Sidebar {
-        width: 27%;
-        float: left;
-    }
-
-    .Bottom-Sidebar {
-        width: 27%;
-        float: left;
-    }
-
-    .MainFooter {
-        position: relative;
-        bottom: 0;
-        width: 100%;
-        padding: 5px 20px;
-        background: #36546c;
-    }
-
-    #MainContent overflow::-webkit-scrollbar:vertical {
-        width: 16px;
-    }
-
-    -scrollbar:vertical {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        width: 350px;
-        height: 6px;
-        border-radius: 2px;
-        -webkit-border-radius: 2px;
-        -moz-border-radius: 2px;
-        border: 1px solid #666;
-    }
-}
-
-#MainContent::-webkit-scrollbar {
-    width: 12px;
-}
-
-#MainContent::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.8);
-    border-radius: 10px;
-}
-
-#MainContent::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    box-shadow: rgba(0,0,0,0.3) 1px 5px;
-    background: #fff;
-}
-
-    #MainContent::-webkit-scrollbar-thumb:hover {
-        background: #f0f0f0;
-    }

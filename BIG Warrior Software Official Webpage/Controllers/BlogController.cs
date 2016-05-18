@@ -42,6 +42,9 @@ namespace BIG_Warrior_Software_Official_Webpage.Controllers
                 sb.AppendLine("</footer>");
                 sb.AppendLine("<div class=\"BlogContent\">");
                 sb.AppendLine(blogEntry.Body);
+                sb.Append("<div class=\"fb-like\" data-href=\"http://bigwarriorsoftware.hu/Blog/BlogUrl/");
+                sb.Append(blogEntry.Url);
+                sb.Append("\" data-layout=\"button_count\" data-action=\"like\" data-show-faces=\"false\" data-share=\"true\"></div>");
                 sb.AppendLine("</div>");
                 sb.AppendLine("</article>");
             }
